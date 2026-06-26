@@ -14,382 +14,222 @@
 <!-- ═══ HEADER ═══════════════════════════════════════ -->
 <header>
   <div class="header-inner">
-    <a class="site-logo" href="#">
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-        <polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/>
-      </svg>
-      Prog. Avanzada
-    </a>
-    <nav>
-      <a href="#" data-unit="unidad1" onclick="showUnit('unidad1'); return false;">
-        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 9h6M9 12h6M9 15h4"/></svg>
-        POO
+    <div class="logo-group">
+      <a class="site-logo" href="#" onclick="showHome(); return false;">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/>
+        </svg>
+        Prog. Avanzada
       </a>
-      <a href="#" data-unit="unidad2" onclick="showUnit('unidad2'); return false;">
+      <a class="recursos-gen-btn" href="#" onclick="showUnit('recursos-generales'); return false;">
+        <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+        Recursos generales
+      </a>
+    </div>
+    <nav>
+      <a href="#" data-unit="clases" onclick="showUnit('clases'); return false;">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 9h6M9 12h6M9 15h4"/></svg>
+        Clases y objetos
+      </a>
+      <a href="#" data-unit="agregacion" onclick="showUnit('agregacion'); return false;">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+        Agregación
+      </a>
+      <a href="#" data-unit="arraylist" onclick="showUnit('arraylist'); return false;">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg>
+        ArrayList
+      </a>
+      <a href="#" data-unit="herencia" onclick="showUnit('herencia'); return false;">
         <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
         Herencia
       </a>
-      <a href="#" data-unit="unidad3" onclick="showUnit('unidad3'); return false;">
-        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg>
-        Colecciones
+      <a href="#" data-unit="polimorfismo" onclick="showUnit('polimorfismo'); return false;">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        Polimorfismo
       </a>
-      <a href="#" data-unit="unidad4" onclick="showUnit('unidad4'); return false;">
+      <a href="#" data-unit="interfaces" onclick="showUnit('interfaces'); return false;">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="4 17 10 11 4 5"/><line x1="12" y1="19" x2="20" y2="19"/></svg>
+        Interfaces
+      </a>
+      <a href="#" data-unit="javaweb" onclick="showUnit('javaweb'); return false;">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+        JavaWeb
+      </a>
+      <a href="#" data-unit="mvc" onclick="showUnit('mvc'); return false;">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+        MVC
+      </a>
+      <a href="#" data-unit="conexion-bd" onclick="showUnit('conexion-bd'); return false;">
         <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg>
-        JDBC
+        Conexión BD
       </a>
     </nav>
   </div>
 </header>
 
-<!-- ═══ HERO ══════════════════════════════════════════ -->
-<section class="hero">
-  <h1>Programación Avanzada — Java</h1>
-  <p>2do Bachillerato Tecnológico en Tecnologías de la Información · UTU</p>
-  <div class="hero-pills">
-    <span class="pill pill-cyan">
-      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
-      Teoría con ejemplos
-    </span>
-    <span class="pill pill-navy">
-      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="4 17 10 11 4 5"/><line x1="12" y1="19" x2="20" y2="19"/></svg>
-      Ejercicios ejecutables
-    </span>
-    <span class="pill pill-light">
-      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
-      Cuestionarios
-    </span>
-  </div>
-</section>
-
 <!-- ═══ MAIN ═══════════════════════════════════════════ -->
 <main>
 
-  <!-- ─── CARD 1: Clases y Objetos ─────────────────── -->
-  <article class="card" id="unidad1">
-    <div class="card-header">
-      <div class="card-icon">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-          <rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 9h6M9 12h6M9 15h4"/>
-        </svg>
-      </div>
-      <div class="card-meta">
-        <span class="card-unit">Unidad 1</span>
-        <h2 class="card-title">Clases y Objetos</h2>
-      </div>
-      <div class="card-complete-badge" aria-live="polite">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>
-        Completada
-      </div>
-    </div>
+  <!-- ══ HOME VIEW ══════════════════════════════════════ -->
+  <div id="home-view">
+    <section class="home-hero">
+      <h1>Programación Avanzada — Java</h1>
+      <p>2do Bachillerato Tecnológico en Tecnologías de la Información · UTU La Paz</p>
+    </section>
 
-    <div class="tabs" role="tablist" aria-label="Secciones de Clases y Objetos">
-      <button class="tab-btn active" role="tab" aria-selected="true" onclick="switchTab(this)">
-        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
-        Teoría
-      </button>
-      <button class="tab-btn" role="tab" aria-selected="false" onclick="switchTab(this)">
-        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="4 17 10 11 4 5"/><line x1="12" y1="19" x2="20" y2="19"/></svg>
-        Ejercicios
-      </button>
-      <button class="tab-btn" role="tab" aria-selected="false" onclick="switchTab(this)">
-        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
-        Cuestionario
-      </button>
-    </div>
+    <section class="toc-section">
+      <h2 class="toc-title">Contenidos del curso</h2>
+      <div class="toc-grid">
 
-    <div class="tab-panel active">
-      <p class="theory-text">
-        En Java, una <strong>clase</strong> es una plantilla que define atributos y comportamientos. Un <strong>objeto</strong> es una instancia de esa clase creada en tiempo de ejecución con <code>new</code>.<br><br>
-        Los <strong>atributos</strong> representan el estado del objeto y los <strong>métodos</strong> representan sus acciones. El <strong>constructor</strong> es un método especial que se ejecuta al crear el objeto.
-      </p>
-      <p class="panel-label">Ejemplo — ejecutá el código:</p>
-      <div class="compiler-frame">
-        <!-- Reemplazá la URL con tu snippet: https://onecompiler.com/embed/java/TU_ID?theme=dark&hideTitle=true&hideNew=true -->
-        <iframe src="https://onecompiler.com/embed/java"
-          title="Editor Java — Clases y Objetos" allowfullscreen loading="lazy"></iframe>
-      </div>
-    </div>
+        <div class="toc-card available" onclick="showUnit('clases')">
+          <div class="toc-num">1</div>
+          <div class="toc-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 9h6M9 12h6M9 15h4"/></svg>
+          </div>
+          <h3>Clases y Objetos</h3>
+          <div class="toc-topics">
+            <span>class</span><span>constructor</span><span>getter/setter</span><span>encapsulamiento</span>
+          </div>
+          <div class="toc-status available">● Disponible</div>
+        </div>
 
-    <div class="tab-panel">
-      <div class="exercise-text">
-        <ol>
-          <li>Creá una clase <code>Persona</code> con atributos <code>nombre</code>, <code>edad</code> y <code>dni</code>. Agregá un constructor y un método <code>saludar()</code> que imprima los datos.</li>
-          <li>Instanciá 3 objetos <code>Persona</code> distintos y mostrá sus datos.</li>
-          <li><strong>Desafío:</strong> agregá un método <code>esMayorDeEdad()</code> que retorne <code>boolean</code>.</li>
-        </ol>
-      </div>
-      <p class="panel-label">Editor libre — escribí tu solución:</p>
-      <div class="compiler-frame">
-        <iframe src="https://onecompiler.com/embed/java"
-          title="Editor Java — Ejercicio Clases y Objetos" allowfullscreen loading="lazy"></iframe>
-      </div>
-    </div>
+        <div class="toc-card" onclick="showUnit('agregacion')">
+          <div class="toc-num">2</div>
+          <div class="toc-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+          </div>
+          <h3>Agregación</h3>
+          <div class="toc-topics">
+            <span>has-a</span><span>composición</span><span>referencias</span>
+          </div>
+          <div class="toc-status">Próximamente</div>
+        </div>
 
-    <div class="tab-panel">
-      <p class="theory-text">Respondé el cuestionario para verificar tu comprensión de la unidad.</p>
-      <!-- Reemplazá por: <div class="forms-frame"><iframe src="https://docs.google.com/forms/d/e/TU_ID/viewform?embedded=true" ...></iframe></div> -->
-      <div class="forms-placeholder">
-        <svg width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
-        <strong>Pegá aquí el embed de tu Google Form</strong>
-        <span>Formulario → Enviar → ícono de cadena → copiá el link → agregá <code>?embedded=true</code></span>
-        <code>&lt;iframe src="https://docs.google.com/forms/d/e/TU_ID/viewform?embedded=true" width="100%" height="520" frameborder="0"&gt;&lt;/iframe&gt;</code>
-      </div>
-    </div>
-  </article>
+        <div class="toc-card available" onclick="showUnit('arraylist')">
+          <div class="toc-num">3</div>
+          <div class="toc-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg>
+          </div>
+          <h3>ArrayList</h3>
+          <div class="toc-topics">
+            <span>ArrayList</span><span>HashMap</span><span>genéricos</span>
+          </div>
+          <div class="toc-status available">● Disponible</div>
+        </div>
 
-  <!-- ─── CARD 2: Herencia y Polimorfismo ───────────── -->
-  <article class="card" id="unidad2" style="display:none">
-    <div class="card-header">
-      <div class="card-icon">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-          <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/>
-          <path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>
-        </svg>
-      </div>
-      <div class="card-meta">
-        <span class="card-unit">Unidad 2</span>
-        <h2 class="card-title">Herencia y Polimorfismo</h2>
-      </div>
-      <div class="card-complete-badge" aria-live="polite">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>
-        Completada
-      </div>
-    </div>
+        <div class="toc-card available" onclick="showUnit('herencia')">
+          <div class="toc-num">4</div>
+          <div class="toc-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          </div>
+          <h3>Herencia</h3>
+          <div class="toc-topics">
+            <span>extends</span><span>super()</span><span>@Override</span><span>sobrecarga</span>
+          </div>
+          <div class="toc-status available">● Disponible</div>
+        </div>
 
-    <div class="tabs" role="tablist" aria-label="Secciones de Herencia">
-      <button class="tab-btn active" role="tab" aria-selected="true" onclick="switchTab(this)">
-        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
-        Teoría
-      </button>
-      <button class="tab-btn" role="tab" aria-selected="false" onclick="switchTab(this)">
-        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="4 17 10 11 4 5"/><line x1="12" y1="19" x2="20" y2="19"/></svg>
-        Ejercicios
-      </button>
-      <button class="tab-btn" role="tab" aria-selected="false" onclick="switchTab(this)">
-        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
-        Cuestionario
-      </button>
-    </div>
+        <div class="toc-card" onclick="showUnit('polimorfismo')">
+          <div class="toc-num">5</div>
+          <div class="toc-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          </div>
+          <h3>Polimorfismo</h3>
+          <div class="toc-topics">
+            <span>upcasting</span><span>instanceof</span><span>clase abstracta</span>
+          </div>
+          <div class="toc-status">Próximamente</div>
+        </div>
 
-    <div class="tab-panel active">
-      <p class="theory-text">
-        <strong>Herencia</strong> (<code>extends</code>) permite que una clase hija reutilice el código de una clase padre. <strong>Polimorfismo</strong> permite que objetos de distintas subclases sean tratados como objetos de la clase padre.<br><br>
-        <code>@Override</code> indica que un método redefine el comportamiento del padre. <code>super</code> permite acceder al constructor o métodos del padre.
-      </p>
-      <p class="panel-label">Ejemplo — ejecutá el código:</p>
-      <div class="compiler-frame">
-        <iframe src="https://onecompiler.com/embed/java"
-          title="Editor Java — Herencia" allowfullscreen loading="lazy"></iframe>
-      </div>
-    </div>
+        <div class="toc-card" onclick="showUnit('interfaces')">
+          <div class="toc-num">6</div>
+          <div class="toc-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><polyline points="4 17 10 11 4 5"/><line x1="12" y1="19" x2="20" y2="19"/></svg>
+          </div>
+          <h3>Interfaces</h3>
+          <div class="toc-topics">
+            <span>interface</span><span>implements</span><span>contrato</span>
+          </div>
+          <div class="toc-status">Próximamente</div>
+        </div>
 
-    <div class="tab-panel">
-      <div class="exercise-text">
-        <ol>
-          <li>Creá una clase abstracta <code>Figura</code> con el método abstracto <code>area()</code>.</li>
-          <li>Implementá <code>Circulo</code> y <code>Rectangulo</code> que extiendan <code>Figura</code>.</li>
-          <li>Creá un array <code>Figura[]</code> con distintas figuras e imprimí el área de cada una usando polimorfismo.</li>
-          <li><strong>Desafío:</strong> agregá <code>Triangulo</code> sin modificar el código existente.</li>
-        </ol>
-      </div>
-      <p class="panel-label">Editor libre — escribí tu solución:</p>
-      <div class="compiler-frame">
-        <iframe src="https://onecompiler.com/embed/java"
-          title="Editor Java — Ejercicio Herencia" allowfullscreen loading="lazy"></iframe>
-      </div>
-    </div>
+        <div class="toc-card" onclick="showUnit('javaweb')">
+          <div class="toc-num">7</div>
+          <div class="toc-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+          </div>
+          <h3>JavaWeb</h3>
+          <div class="toc-topics">
+            <span>Servlet</span><span>JSP</span><span>HTTP</span>
+          </div>
+          <div class="toc-status">Próximamente</div>
+        </div>
 
-    <div class="tab-panel">
-      <p class="theory-text">Respondé el cuestionario para verificar tu comprensión de la unidad.</p>
-      <div class="forms-placeholder">
-        <svg width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
-        <strong>Pegá aquí el embed de tu Google Form</strong>
-        <span>Formulario → Enviar → ícono de cadena → copiá el link → agregá <code>?embedded=true</code></span>
-        <code>&lt;iframe src="https://docs.google.com/forms/d/e/TU_ID/viewform?embedded=true" width="100%" height="520" frameborder="0"&gt;&lt;/iframe&gt;</code>
-      </div>
-    </div>
-  </article>
+        <div class="toc-card" onclick="showUnit('mvc')">
+          <div class="toc-num">8</div>
+          <div class="toc-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+          </div>
+          <h3>MVC</h3>
+          <div class="toc-topics">
+            <span>Modelo</span><span>Vista</span><span>Controlador</span>
+          </div>
+          <div class="toc-status">Próximamente</div>
+        </div>
 
-  <!-- ─── CARD 3: Colecciones ───────────────────────── -->
-  <article class="card" id="unidad3" style="display:none">
-    <div class="card-header">
-      <div class="card-icon">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-          <line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/>
-          <line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/>
-          <line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/>
-        </svg>
-      </div>
-      <div class="card-meta">
-        <span class="card-unit">Unidad 3</span>
-        <h2 class="card-title">Colecciones — ArrayList y HashMap</h2>
-      </div>
-      <div class="card-complete-badge" aria-live="polite">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>
-        Completada
-      </div>
-    </div>
+        <div class="toc-card" onclick="showUnit('conexion-bd')">
+          <div class="toc-num">9</div>
+          <div class="toc-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg>
+          </div>
+          <h3>Conexión BD</h3>
+          <div class="toc-topics">
+            <span>JDBC</span><span>PreparedStatement</span><span>DAO</span>
+          </div>
+          <div class="toc-status">Próximamente</div>
+        </div>
 
-    <div class="tabs" role="tablist" aria-label="Secciones de Colecciones">
-      <button class="tab-btn active" role="tab" aria-selected="true" onclick="switchTab(this)">
-        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
-        Teoría
-      </button>
-      <button class="tab-btn" role="tab" aria-selected="false" onclick="switchTab(this)">
-        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="4 17 10 11 4 5"/><line x1="12" y1="19" x2="20" y2="19"/></svg>
-        Ejercicios
-      </button>
-      <button class="tab-btn" role="tab" aria-selected="false" onclick="switchTab(this)">
-        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
-        Cuestionario
-      </button>
-    </div>
+      </div>
+    </section>
+  </div>
 
-    <div class="tab-panel active">
-      <p class="theory-text">
-        Las <strong>colecciones</strong> son estructuras dinámicas del paquete <code>java.util</code>. <code>ArrayList</code> es una lista de tamaño variable; <code>HashMap</code> guarda pares <code>clave → valor</code>.<br><br>
-        Se recorren con <code>for-each</code> o con iteradores. El uso de <strong>Generics</strong> (<code>&lt;String&gt;</code>) permite indicar el tipo de los elementos en tiempo de compilación.
-      </p>
-      <p class="panel-label">Ejemplo — ejecutá el código:</p>
-      <div class="compiler-frame">
-        <iframe src="https://onecompiler.com/embed/java"
-          title="Editor Java — Colecciones" allowfullscreen loading="lazy"></iframe>
-      </div>
-    </div>
-
-    <div class="tab-panel">
-      <div class="exercise-text">
-        <ol>
-          <li>Creá un <code>ArrayList&lt;String&gt;</code> con 5 nombres, ordenalo con <code>Collections.sort()</code> e imprimilo.</li>
-          <li>Usando un <code>HashMap&lt;String, Integer&gt;</code>, almacená el nombre y la nota de 4 estudiantes. Mostrá quién tiene la nota más alta.</li>
-          <li><strong>Desafío:</strong> combiná ambas estructuras: un <code>ArrayList</code> de <code>Persona</code> con nombre y nota, ordenado de mayor a menor nota.</li>
-        </ol>
-      </div>
-      <p class="panel-label">Editor libre — escribí tu solución:</p>
-      <div class="compiler-frame">
-        <iframe src="https://onecompiler.com/embed/java"
-          title="Editor Java — Ejercicio Colecciones" allowfullscreen loading="lazy"></iframe>
-      </div>
-    </div>
-
-    <div class="tab-panel">
-      <p class="theory-text">Respondé el cuestionario para verificar tu comprensión de la unidad.</p>
-      <div class="forms-placeholder">
-        <svg width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
-        <strong>Pegá aquí el embed de tu Google Form</strong>
-        <span>Formulario → Enviar → ícono de cadena → copiá el link → agregá <code>?embedded=true</code></span>
-        <code>&lt;iframe src="https://docs.google.com/forms/d/e/TU_ID/viewform?embedded=true" width="100%" height="520" frameborder="0"&gt;&lt;/iframe&gt;</code>
-      </div>
-    </div>
-  </article>
-
-  <!-- ─── CARD 4: JDBC ──────────────────────────────── -->
-  <article class="card" id="unidad4" style="display:none">
-    <div class="card-header">
-      <div class="card-icon">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-          <ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/>
-          <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/>
-        </svg>
-      </div>
-      <div class="card-meta">
-        <span class="card-unit">Unidad 4</span>
-        <h2 class="card-title">JDBC — Conexión a Base de Datos</h2>
-      </div>
-      <div class="card-complete-badge" aria-live="polite">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>
-        Completada
-      </div>
-    </div>
-
-    <div class="tabs" role="tablist" aria-label="Secciones de JDBC">
-      <button class="tab-btn active" role="tab" aria-selected="true" onclick="switchTab(this)">
-        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
-        Teoría
-      </button>
-      <button class="tab-btn" role="tab" aria-selected="false" onclick="switchTab(this)">
-        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="4 17 10 11 4 5"/><line x1="12" y1="19" x2="20" y2="19"/></svg>
-        Ejercicios
-      </button>
-      <button class="tab-btn" role="tab" aria-selected="false" onclick="switchTab(this)">
-        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
-        Cuestionario
-      </button>
-    </div>
-
-    <div class="tab-panel active">
-      <p class="theory-text">
-        <strong>JDBC</strong> (Java Database Connectivity) es la API estándar de Java para conectarse a bases de datos relacionales. El flujo básico es: <code>DriverManager.getConnection()</code> → crear <code>Statement</code> o <code>PreparedStatement</code> → ejecutar consulta → recorrer <code>ResultSet</code> → cerrar conexión.<br><br>
-        Usar <code>PreparedStatement</code> evita inyecciones SQL y mejora el rendimiento en consultas repetidas.
-      </p>
-      <p class="panel-label">Ejemplo — ejecutá el código:</p>
-      <div class="compiler-frame">
-        <iframe src="https://onecompiler.com/embed/java"
-          title="Editor Java — JDBC" allowfullscreen loading="lazy"></iframe>
-      </div>
-    </div>
-
-    <div class="tab-panel">
-      <div class="exercise-text">
-        <ol>
-          <li>Escribí el código para conectarte a una base de datos MySQL con JDBC. Manejá la excepción <code>SQLException</code>.</li>
-          <li>Creá un método <code>listarEstudiantes(Connection con)</code> que haga un <code>SELECT</code> e imprima cada fila.</li>
-          <li>Usando <code>PreparedStatement</code>, creá un método <code>insertarEstudiante(String nombre, int edad)</code>.</li>
-          <li><strong>Desafío:</strong> implementá el patrón DAO (Data Access Object) para la tabla <code>estudiantes</code>.</li>
-        </ol>
-      </div>
-      <p class="panel-label">Editor libre — escribí tu solución:</p>
-      <div class="compiler-frame">
-        <iframe src="https://onecompiler.com/embed/java"
-          title="Editor Java — Ejercicio JDBC" allowfullscreen loading="lazy"></iframe>
-      </div>
-    </div>
-
-    <div class="tab-panel">
-      <p class="theory-text">Respondé el cuestionario para verificar tu comprensión de la unidad.</p>
-      <div class="forms-placeholder">
-        <svg width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
-        <strong>Pegá aquí el embed de tu Google Form</strong>
-        <span>Formulario → Enviar → ícono de cadena → copiá el link → agregá <code>?embedded=true</code></span>
-        <code>&lt;iframe src="https://docs.google.com/forms/d/e/TU_ID/viewform?embedded=true" width="100%" height="520" frameborder="0"&gt;&lt;/iframe&gt;</code>
-      </div>
-    </div>
-  </article>
-
-  <!-- ─── Barra de acciones ─────────────────────────── -->
-  <div class="action-bar" role="toolbar" aria-label="Navegación y acciones de la unidad">
-    <button class="action-btn nav-prev" id="btn-prev" onclick="goUnit(-1)" aria-label="Unidad anterior">
-      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="15 18 9 12 15 6"/></svg>
-      Anterior
+  <!-- ══ UNIT VIEW ══════════════════════════════════════ -->
+  <div id="unit-view" style="display:none">
+    <button class="back-btn" onclick="showHome()">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="15 18 9 12 15 6"/></svg>
+      Volver al inicio
     </button>
 
-    <button class="action-btn btn-complete" id="btn-complete" onclick="toggleComplete()">
-      <!-- contenido generado por JS -->
-    </button>
+    <article class="card" id="unit-container">
+      <!-- contenido cargado vía fetch -->
+    </article>
 
-    <button class="action-btn btn-print" onclick="printUnit()">
-      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
-      Imprimir / PDF
-    </button>
-
-    <button class="action-btn nav-next" id="btn-next" onclick="goUnit(1)" aria-label="Unidad siguiente">
-      Siguiente
-      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
-    </button>
+    <div class="action-bar">
+      <button class="action-btn nav-prev" id="btn-prev" onclick="goUnit(-1)" aria-label="Unidad anterior">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="15 18 9 12 15 6"/></svg>
+        Anterior
+      </button>
+      <button class="action-btn" id="btn-complete" onclick="toggleComplete()">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+        Marcar como completada
+      </button>
+      <button class="action-btn" onclick="printUnit()">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
+        Imprimir / PDF
+      </button>
+      <button class="action-btn nav-next" id="btn-next" onclick="goUnit(1)" aria-label="Unidad siguiente">
+        Siguiente
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
+      </button>
+    </div>
   </div>
 
 </main>
 
 <!-- ═══ FOOTER ════════════════════════════════════════ -->
 <footer>
-  <p>Programación Avanzada · 2do BT TI · UTU — Material didáctico para uso en clase</p>
-  <div style="margin-top: 1rem;">
-    <hr style="border: none; border-top: 1px solid rgba(255,255,255,.15); margin-bottom: 1rem;" />
-    <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">
-      <img alt="Licencia Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" />
-    </a>
-    <p style="margin-top: .6rem; font-size: .9rem; font-weight: 600; color: rgba(255,255,255,.85);">Prof. Elizabeth Izquierdo</p>
-  </div>
+  <span>Programación Avanzada · 2do BT TI · UTU La Paz</span>
+  <span>Docente: Elizabeth Izquierdo · 2026</span>
 </footer>
 
 <script src="script.js"></script>

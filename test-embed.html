@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Test: OnlineGDB vs OneCompiler</title>
+  <style>
+    body { font-family: Inter, system-ui, sans-serif; background: #f0f4f8; color: #0d1b2a; margin: 0; padding: 2rem; }
+    h1 { font-size: 1.4rem; margin-bottom: .25rem; }
+    p.sub { color: #4a6278; font-size: .9rem; margin-bottom: 2rem; }
+    .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+    @media (max-width: 800px) { .grid { grid-template-columns: 1fr; } }
+    .box { background: #fff; border-radius: 12px; border: 1px solid #dde6ef; }
+    .box-header { padding: 1rem 1.25rem; border-bottom: 1px solid #dde6ef; }
+    .box-header h2 { font-size: 1rem; margin: 0 0 .2rem; }
+    .box-header p { font-size: .8rem; color: #4a6278; margin: 0; }
+    .badge { display: inline-block; font-size: .68rem; font-weight: 600; padding: .1rem .5rem; border-radius: 999px; margin-left: .4rem; vertical-align: middle; }
+    .badge-green { background: #dcfce7; color: #16a34a; }
+    .badge-blue  { background: #e0f7fa; color: #0077a8; }
+    /* OnlineGDB inyecta su propio iframe — no forzamos altura, dejamos que el script lo haga */
+    .embed-wrap-gdb { padding: 0; min-height: 460px; }
+    .embed-wrap-gdb iframe { width: 100% !important; min-height: 460px !important; border: none !important; display: block !important; }
+    /* OneCompiler sí necesita iframe manual */
+    .embed-wrap-oc { height: 500px; }
+    .embed-wrap-oc iframe { width: 100%; height: 100%; border: none; display: block; }
+
+    /* Sección de notas */
+    .notes { margin-top: 2rem; background: #fff; border-radius: 12px; border: 1px solid #dde6ef; padding: 1.25rem 1.5rem; }
+    .notes h2 { font-size: 1rem; margin-bottom: 1rem; }
+    table { width: 100%; border-collapse: collapse; font-size: .85rem; }
+    th { text-align: left; padding: .5rem .75rem; background: #f0f4f8; border-bottom: 1px solid #dde6ef; font-weight: 600; }
+    td { padding: .5rem .75rem; border-bottom: 1px solid #f0f4f8; vertical-align: top; }
+    td:first-child { font-weight: 500; white-space: nowrap; }
+    .yes { color: #16a34a; font-weight: 600; }
+    .no  { color: #dc2626; font-weight: 600; }
+    .partial { color: #d97706; font-weight: 600; }
+  </style>
+</head>
+<body>
+
+<h1>🧪 Prueba de editores embebidos</h1>
+<p class="sub">Comparación de OnlineGDB vs OneCompiler para el sitio de Programación Avanzada</p>
+
+<div class="grid">
+
+  <!-- OnlineGDB -->
+  <div class="box">
+    <div class="box-header">
+      <h2>OnlineGDB <span class="badge badge-green">con código precargado</span></h2>
+      <p>Embed de un programa guardado — el ejemplo ya está listo para ejecutar y modificar</p>
+    </div>
+    <div class="embed-wrap-gdb">
+      <script src="https://onlinegdb.com/embed/js/QQ92WOuxD?theme=dark"></script>
+    </div>
+  </div>
+
+  <!-- OneCompiler -->
+  <div class="box">
+    <div class="box-header">
+      <h2>OneCompiler <span class="badge badge-blue">editor en blanco</span></h2>
+      <p>Editor vacío — el alumno escribe el código desde cero</p>
+    </div>
+    <div class="embed-wrap-oc">
+      <iframe
+        src="https://onecompiler.com/embed/java"
+        title="Editor Java"
+        allowfullscreen
+        loading="lazy">
+      </iframe>
+    </div>
+  </div>
+
+</div>
+
+<!-- Tabla comparativa -->
+<div class="notes">
+  <h2>📊 Comparación para el sitio</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Característica</th>
+        <th>OnlineGDB</th>
+        <th>OneCompiler</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Código precargado (ejemplos de teoría)</td>
+        <td class="yes">✓ Sí — guardás el ejemplo, compartís el link</td>
+        <td class="no">✗ No — siempre arranca en blanco</td>
+      </tr>
+      <tr>
+        <td>Alumno puede editar y ejecutar</td>
+        <td class="yes">✓ Sí</td>
+        <td class="yes">✓ Sí</td>
+      </tr>
+      <tr>
+        <td>Interfaz completa (guardar, AI, etc.)</td>
+        <td class="partial">~ Solo run y tema</td>
+        <td class="yes">✓ Completa (guardar, compartir, AI)</td>
+      </tr>
+      <tr>
+        <td>Permite código inicial en ejercicios</td>
+        <td class="yes">✓ Sí (podés dar código "base")</td>
+        <td class="no">✗ No — solo vacío</td>
+      </tr>
+      <tr>
+        <td>Cómo obtener el embed</td>
+        <td>Share → Embed Code → copiar &lt;script&gt;</td>
+        <td>URL fija: onecompiler.com/embed/java</td>
+      </tr>
+      <tr>
+        <td>¿Cambia si editás el programa original?</td>
+        <td class="yes">✓ Sí — el embed muestra siempre tu versión actual</td>
+        <td>—</td>
+      </tr>
+      <tr>
+        <td>Uso ideal en el sitio</td>
+        <td><strong>Teoría</strong>: mostrar ejemplos listos para ejecutar</td>
+        <td><strong>Ejercicios</strong>: alumno escribe la solución</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p style="margin-top: 1rem; font-size: .82rem; color: #4a6278;">
+    💡 <strong>Combinación sugerida:</strong> usar <strong>OnlineGDB</strong> en el tab de Teoría (con ejemplos precargados) y <strong>OneCompiler</strong> en el tab de Ejercicios (editor libre para que el alumno resuelva). Así las pildoras de código de los ejemplos están siempre listas y los alumnos tienen lienzo en blanco para practicar.
+  </p>
+</div>
+
+</body>
+</html>
