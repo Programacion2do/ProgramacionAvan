@@ -1,14 +1,13 @@
 /* ── Configuración de unidades ──────────────────────── */
 const UNITS = [
-  { id: 'clases',       num: 1, title: 'Clases y Objetos'  },
-  { id: 'agregacion',   num: 2, title: 'Agregación'         },
-  { id: 'arraylist',    num: 3, title: 'ArrayList'          },
-  { id: 'herencia',     num: 4, title: 'Herencia'           },
-  { id: 'polimorfismo', num: 5, title: 'Polimorfismo'       },
-  { id: 'interfaces',   num: 6, title: 'Interfaces'         },
-  { id: 'javaweb',      num: 7, title: 'JavaWeb'            },
-  { id: 'mvc',          num: 8, title: 'MVC'                },
-  { id: 'conexion-bd',  num: 9, title: 'Conexión BD'        },
+  { id: 'clases',      num: 1, title: 'Clases y Objetos'        },
+  { id: 'agregacion',  num: 2, title: 'Agregación'               },
+  { id: 'arraylist',   num: 3, title: 'ArrayList'                },
+  { id: 'herencia',    num: 4, title: 'Herencia y Polimorfismo'  },
+  { id: 'interfaces',  num: 5, title: 'Interfaces'               },
+  { id: 'javaweb',     num: 6, title: 'JavaWeb'                  },
+  { id: 'mvc',         num: 7, title: 'MVC'                      },
+  { id: 'conexion-bd', num: 8, title: 'Conexión BD'              },
 ];
 
 let currentUnit = null;
