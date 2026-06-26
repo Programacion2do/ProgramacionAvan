@@ -46,9 +46,10 @@
         <div class="theory-text-img">
           <p class="theory-text">
             La <strong>herencia</strong> permite crear una clase hija (<em>subclase</em>) que reutiliza atributos y métodos de una clase padre (<em>superclase</em>). Se usa la palabra clave <code>extends</code>.<br><br>
-            La subclase hereda todo lo que <strong>no</strong> sea <code>private</code> del padre. Para que los atributos del padre sean accesibles directamente en la hija, se declaran <code>protected</code>.<br><br>
-            En Java solo se puede extender <strong>una</strong> clase (<em>herencia simple</em>). La relación que establece es <em>"es un"</em> (<strong>is-a</strong>): un <code>Becado</code> <em>es un</em> <code>Alumno</code>. Esto es diferente de la relación <em>"tiene un"</em> (<strong>has-a</strong>), que se modela con atributos, no con herencia — por ejemplo, un <code>Auto</code> <em>tiene un</em> <code>Motor</code>.<br><br>
-            Atención: dos clases que casualmente comparten los mismos campos <strong>no</strong> deben heredar entre sí si no existe esa relación conceptual real.
+            La subclase hereda todo lo que <strong>no</strong> sea <code>private</code> del padre. <br>
+            En Java solo se puede extender <strong>una</strong> clase (<em>herencia simple</em>). La relación que establece es <em>"es un"</em> (<strong>is-a</strong>): Por ejemplo un <code>Becado</code> <em>es un</em> <code>Alumno</code>. Esto es diferente de la relación <em>"tiene un"</em> (<strong>has-a</strong>), que se modela con atributos, no con herencia — por ejemplo, un <code>Auto</code> <em>tiene un</em> <code>Motor</code>.<br><br>
+            <br>En el diagrama de clases esta relación <em>es un</em> se representa con un triángulo con un vértice apuntando a la superClase.<br>
+            <br>Atención: dos clases que casualmente comparten los mismos campos <strong>no</strong> deben heredar entre sí si no existe esa relación conceptual real.<br>
           </p>
           <img src="img/diagrama-alumno-becado.png"
                alt="Diagrama de clases UML — Alumno y Becado"
