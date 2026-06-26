@@ -741,7 +741,7 @@ main {
 .theory-refs a { color: var(--c-cyan-text); text-decoration: underline; }
 .theory-refs a:hover { color: var(--c-cyan); }
 
-/* Imagen de diagrama UML */
+/* Imagen de diagrama UML — standalone (centrada) */
 .theory-img {
   display: block;
   max-width: 480px;
@@ -749,6 +749,30 @@ main {
   margin: 1rem auto;
   border-radius: var(--radius-md);
   border: 1px solid var(--gray-100);
+}
+
+/* Texto + imagen lado a lado */
+.theory-text-img {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.5rem;
+  padding: 0 1.75rem;
+  margin-bottom: .5rem;
+}
+.theory-text-img .theory-text {
+  flex: 1;
+  padding: 0;
+}
+.theory-img-inline {
+  width: 200px;
+  flex-shrink: 0;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--gray-100);
+  margin-top: .25rem;
+}
+@media (max-width: 600px) {
+  .theory-text-img { flex-direction: column; }
+  .theory-img-inline { width: 100%; }
 }
 
 /* ── Action Bar ────────────────────────────────────── */
