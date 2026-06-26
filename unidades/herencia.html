@@ -45,11 +45,10 @@
       <div class="sub-content active">
         <div class="theory-text-img">
           <p class="theory-text">
-            <br>La <strong>herencia</strong> permite crear una clase hija (<em>subclase</em>) que reutiliza atributos y métodos de una clase padre (<em>superclase</em>). Se usa la palabra clave <code>extends</code>.<br><br>
-            La subclase hereda todo lo que <strong>no</strong> sea <code>private</code> del padre. <br>
-            En Java solo se puede extender <strong>una</strong> clase (<em>herencia simple</em>). La relación que establece es <em>"es un"</em> (<strong>is-a</strong>): Por ejemplo un <code>Becado</code> <em>es un</em> <code>Alumno</code>. Esto es diferente de la relación <em>"tiene un"</em> (<strong>has-a</strong>), que se modela con atributos, no con herencia — por ejemplo, un <code>Auto</code> <em>tiene un</em> <code>Motor</code>.<br><br>
-            En el diagrama de clases esta relación <em>es un</em> se representa con un triángulo con un vértice apuntando a la superClase.<br>
-            <br>Atención: dos clases que casualmente comparten los mismos campos <strong>no</strong> deben heredar entre sí si no existe esa relación conceptual real.<br>
+            La <strong>herencia</strong> permite crear una clase hija (<em>subclase</em>) que reutiliza atributos y métodos de una clase padre (<em>superclase</em>). Se usa la palabra clave <code>extends</code>.<br><br>
+            La subclase hereda todo lo que <strong>no</strong> sea <code>private</code> del padre. Para que los atributos del padre sean accesibles directamente en la hija, se declaran <code>protected</code>.<br><br>
+            En Java solo se puede extender <strong>una</strong> clase (<em>herencia simple</em>). La relación que establece es <em>"es un"</em> (<strong>is-a</strong>): un <code>Becado</code> <em>es un</em> <code>Alumno</code>. Esto es diferente de la relación <em>"tiene un"</em> (<strong>has-a</strong>), que se modela con atributos, no con herencia — por ejemplo, un <code>Auto</code> <em>tiene un</em> <code>Motor</code>.<br><br>
+            Atención: dos clases que casualmente comparten los mismos campos <strong>no</strong> deben heredar entre sí si no existe esa relación conceptual real.
           </p>
           <img src="img/diagrama-alumno-becado.png"
                alt="Diagrama de clases UML — Alumno y Becado"
@@ -71,30 +70,6 @@
           Cuando la superclase tiene un constructor con parámetros, la subclase <strong>debe</strong> llamarlo explícitamente con <code>super()</code>. Esta llamada debe ser la <strong>primera línea</strong> del constructor hijo.<br><br>
           Si no se llama a <code>super()</code>, Java intenta llamar al constructor sin parámetros del padre — si ese no existe, el compilador da error.
         </p>
-        <div class="theory-code-block">
-<pre><code>public class Alumno {
-    private String nombre;
-    private int    grado;
-    private double cuota;
-
-    public Alumno(String nombre, int grado, double cuota) {
-        this.nombre = nombre;
-        this.grado  = grado;
-        this.cuota  = cuota;
-    }
-
-    public double cuotaNeta() { return cuota; }
-}
-
-public class Becado extends Alumno {
-    private double saldoBeca;
-
-    public Becado(double beca, String nombre, int grado, double cuota) {
-        super(nombre, grado, cuota);  // ← primera línea obligatoria
-        saldoBeca = beca;
-    }
-}</code></pre>
-        </div>
         <p class="theory-text">
           La palabra clave <code>super</code> tiene tres usos posibles:
         </p>
@@ -119,26 +94,7 @@ super.atributo      // 3. Acceder a un atributo del padre (si es protected)</cod
         <p class="theory-text">
           La <strong>sobreescritura</strong> permite que una subclase redefina un método heredado con su propio comportamiento. <code>@Override</code> no es obligatoria pero es una buena práctica: si el nombre del método no coincide con ninguno del padre, el compilador avisa el error de inmediato.<br><br>
           Para que haya sobreescritura, la <strong>firma del método</strong> debe ser idéntica a la del padre. La <em>firma</em> está formada por el <strong>nombre</strong> y la <strong>lista de parámetros</strong> (número, tipo y orden). <em>No</em> forman parte de la firma: el tipo de retorno, el modificador de acceso ni los nombres de los parámetros.<br><br>
-          Un caso muy común es sobreescribir <code>toString()</code> para que imprimir un objeto muestre información útil. También se pueden sobreescribir métodos de negocio como <code>cuotaNeta()</code>:
-        </p>
-        <div class="theory-code-block">
-<pre><code>public class Becado extends Alumno {
-    private double saldoBeca;
-    // ... constructor con super() ...
-
-    @Override
-    public String toString() {
-        return super.toString() + ", beca: " + saldoBeca;
-    }
-
-    @Override
-    public double cuotaNeta() {
-        return super.cuotaNeta() - saldoBeca;
-    }
-}</code></pre>
-        </div>
-        <p class="theory-text">
-          <code>super.toString()</code> reutiliza la implementación del padre y le agrega la info propia. Lo mismo con <code>super.cuotaNeta()</code>: el becado paga la cuota normal <em>menos</em> su beca.
+          Un caso muy común es sobreescribir <code>toString()</code> para que imprimir un objeto muestre información útil. También se pueden sobreescribir métodos de negocio como <code>cuotaNeta()</code>.
         </p>
         <p class="panel-label">Ejemplo — ejecutá el código:</p>
         <div class="compiler-frame"><iframe src="https://onecompiler.com/embed/java/44tcvqn6a" title="Ejemplo @Override" allowfullscreen loading="lazy"></iframe></div>
@@ -154,28 +110,8 @@ super.atributo      // 3. Acceder a un atributo del padre (si es protected)</cod
       <div class="sub-content">
         <p class="theory-text">
           La herencia puede encadenarse en varios niveles: <code>A → B → C</code>, donde <code>C</code> hereda de <code>B</code>, que hereda de <code>A</code>. Cada <code>super()</code> sube un nivel en la cadena.<br><br>
-          Ejemplo: <code>Electrodomestico → Lavadora</code>. La <code>Lavadora</code> hereda <code>marca</code> y <code>potencia</code> de <code>Electrodomestico</code>, agrega <code>capacidad</code>, y sobreescribe <code>getInfo()</code> usando <code>super.getInfo()</code>:
+          Ejemplo: <code>Electrodomestico → Lavadora</code>. La <code>Lavadora</code> hereda <code>marca</code> y <code>potencia</code> de <code>Electrodomestico</code>, agrega <code>capacidad</code>, y sobreescribe <code>getInfo()</code> usando <code>super.getInfo()</code>.
         </p>
-        <div class="theory-code-block">
-<pre><code>public class Electrodomestico {
-    protected String marca;
-    protected int    potencia;
-    public Electrodomestico(String m, int p) { marca = m; potencia = p; }
-    public String getInfo() { return marca + " - " + potencia + "W"; }
-}
-
-public class Lavadora extends Electrodomestico {
-    private int capacidad;
-    public Lavadora(String m, int p, int c) {
-        super(m, p);            // inicializa Electrodomestico
-        this.capacidad = c;
-    }
-    @Override
-    public String getInfo() {
-        return super.getInfo() + ", Capacidad: " + capacidad + "kg";
-    }
-}</code></pre>
-        </div>
         <p class="theory-text">
           Regla clave: <code>super()</code> siempre va primero en el constructor. Java no permite herencia múltiple (extender dos clases a la vez); para eso existen las <em>interfaces</em>.
         </p>
@@ -195,31 +131,6 @@ public class Lavadora extends Electrodomestico {
           La <strong>sobrecarga de métodos</strong> (<em>overloading</em>) consiste en definir varios métodos con el <strong>mismo nombre</strong> pero diferente <strong>firma</strong> dentro de la misma clase. Recordá: la firma = nombre + lista de parámetros (número, tipo, orden).<br><br>
           Es diferente de la <em>sobreescritura</em>: la sobrecarga ocurre en <strong>la misma clase</strong>, entre métodos con diferente firma. La sobreescritura ocurre entre <strong>subclase y superclase</strong>, redefiniendo un método con la <strong>misma firma</strong>.
         </p>
-        <div class="theory-code-block">
-<pre><code>public class Empleado {
-    private double salario;
-
-    // Sobrecarga: mismo nombre, distintos parámetros
-    public double calcularSalario() {
-        return salario;
-    }
-    public double calcularSalario(double bono) {
-        return salario + bono;
-    }
-    public double calcularSalario(double bono, double deduccion) {
-        return salario + bono - deduccion;
-    }
-}</code></pre>
-        </div>
-        <p class="theory-text">
-          En el <code>main</code>, Java elige automáticamente cuál versión llamar según los argumentos que pasás:
-        </p>
-        <div class="theory-code-block">
-<pre><code>Empleado e = new Empleado(2000);
-e.calcularSalario();              // retorna 2000
-e.calcularSalario(500);           // retorna 2500
-e.calcularSalario(500, 100);      // retorna 2400</code></pre>
-        </div>
         <div class="theory-note" style="margin-top:.8rem;">
           🔁 <strong>Resumen: Sobrecarga vs Sobreescritura</strong><br>
           <strong>Sobrecarga:</strong> misma clase · mismo nombre · diferente firma · en tiempo de compilación<br>
@@ -230,8 +141,7 @@ e.calcularSalario(500, 100);      // retorna 2400</code></pre>
         <p class="theory-note">💡 Código a cargar: clase <code>Empleado</code> con las tres versiones de <code>calcularSalario()</code>. En el <code>main</code>, probá las tres llamadas e imprimí los resultados.</p>
         <div class="theory-refs">
           <strong>Referencias</strong>
-          Presentación C06-01 — Herencia: Sobrecarga y Sobreescritura (clase)<br>
-          Ejemplo funcional Empleado/Vendedor: <a href="https://onlinegdb.com/Mr9GUGH1R" target="_blank" rel="noopener">onlinegdb.com/Mr9GUGH1R</a>
+          Presentación C06-01 — Herencia: Sobrecarga y Sobreescritura (clase)
         </div>
       </div>
     </div>
