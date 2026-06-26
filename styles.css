@@ -764,7 +764,7 @@ main {
   padding: 0;
 }
 .theory-img-inline {
-  width: 320px;
+  width: 450px;
   flex-shrink: 0;
   border-radius: var(--radius-md);
   border: 1px solid var(--gray-100);
