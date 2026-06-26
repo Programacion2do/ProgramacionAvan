@@ -1,0 +1,210 @@
+<div class="card-header">
+      <div class="card-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg>
+      </div>
+      <div class="card-meta">
+        <span class="card-unit">Unidad 3</span>
+        <h2 class="card-title">ArrayList y Colecciones</h2>
+      </div>
+      <div class="card-complete-badge" aria-live="polite">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>
+        Completada
+      </div>
+    </div>
+
+    <div class="tabs" role="tablist" aria-label="Secciones de Colecciones">
+      <button class="tab-btn active" role="tab" aria-selected="true" onclick="switchTab(this)">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+        Teoría
+      </button>
+      <button class="tab-btn" role="tab" aria-selected="false" onclick="switchTab(this)">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="4 17 10 11 4 5"/><line x1="12" y1="19" x2="20" y2="19"/></svg>
+        Ejercicios
+      </button>
+      <button class="tab-btn" role="tab" aria-selected="false" onclick="switchTab(this)">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+        Cuestionario
+      </button>
+      <button class="tab-btn" role="tab" aria-selected="false" onclick="switchTab(this)">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+        Recursos
+      </button>
+    </div>
+
+    <div class="tab-panel active">
+      <div class="subtopic-bar" role="tablist" aria-label="Subtemas de teoría">
+        <button class="sub-pill active" onclick="switchSub(this)">3.1 ArrayList</button>
+        <button class="sub-pill" onclick="switchSub(this)">3.2 HashMap</button>
+        <button class="sub-pill" onclick="switchSub(this)">3.3 Generics</button>
+        <button class="sub-pill" onclick="switchSub(this)">3.4 Collections</button>
+      </div>
+      <div class="sub-content active">
+        <p class="theory-text"><code>ArrayList</code> es una lista de tamaño dinámico del paquete <code>java.util</code>. A diferencia de los arrays comunes, puede crecer o achicarse. Sus elementos se acceden por índice (desde 0) con <code>get(i)</code>.<br><br>Métodos clave: <code>add()</code>, <code>remove()</code>, <code>size()</code>, <code>get()</code>, <code>contains()</code>, <code>clear()</code>. Se recorre fácilmente con <code>for-each</code>.</p>
+        <p class="panel-label">Ejemplo — ejecutá el código:</p>
+        <div class="compiler-frame"><iframe src="https://onecompiler.com/embed/java" title="Ejemplo ArrayList" allowfullscreen loading="lazy"></iframe></div>
+      </div>
+      <div class="sub-content">
+        <p class="theory-text"><code>HashMap</code> almacena pares <strong>clave → valor</strong>. La clave es única; el valor puede repetirse. Es útil cuando necesitás buscar un dato por un identificador (ej: nombre → nota).<br><br>Métodos clave: <code>put(clave, valor)</code>, <code>get(clave)</code>, <code>remove(clave)</code>, <code>containsKey()</code>, <code>keySet()</code>. Para recorrerlo se usa <code>entrySet()</code> o <code>keySet()</code>.</p>
+        <p class="panel-label">Ejemplo — ejecutá el código:</p>
+        <div class="compiler-frame"><iframe src="https://onecompiler.com/embed/java" title="Ejemplo HashMap" allowfullscreen loading="lazy"></iframe></div>
+      </div>
+      <div class="sub-content">
+        <p class="theory-text">Los <strong>Generics</strong> permiten indicar el tipo de datos que contendrá una colección en tiempo de compilación: <code>ArrayList&lt;String&gt;</code>, <code>HashMap&lt;String, Integer&gt;</code>. Esto evita errores de tipo en tiempo de ejecución.<br><br>Sin generics, las colecciones guardan <code>Object</code> y es necesario hacer casting manual. Con generics el compilador detecta los errores antes de ejecutar.</p>
+        <p class="panel-label">Ejemplo — ejecutá el código:</p>
+        <div class="compiler-frame"><iframe src="https://onecompiler.com/embed/java" title="Ejemplo Generics" allowfullscreen loading="lazy"></iframe></div>
+      </div>
+      <div class="sub-content">
+        <p class="theory-text">La clase <code>Collections</code> (con s) ofrece métodos estáticos utilitarios para trabajar con colecciones: <code>Collections.sort(lista)</code> ordena de menor a mayor, <code>Collections.reverse()</code> invierte el orden, <code>Collections.max()</code> y <code>min()</code> obtienen el valor extremo.<br><br>Para ordenar objetos propios, la clase debe implementar <code>Comparable</code> o se puede pasar un <code>Comparator</code>.</p>
+        <p class="panel-label">Ejemplo — ejecutá el código:</p>
+        <div class="compiler-frame"><iframe src="https://onecompiler.com/embed/java" title="Ejemplo Collections" allowfullscreen loading="lazy"></iframe></div>
+      </div>
+    </div>
+
+    <div class="tab-panel">
+      <div class="subtopic-bar" role="tablist" aria-label="Ejercicios">
+        <button class="sub-pill active" onclick="switchSub(this)">Ej. 1 · ArrayList frutas</button>
+        <button class="sub-pill" onclick="switchSub(this)">Ej. 2 · HashMap notas</button>
+        <button class="sub-pill" onclick="switchSub(this)">Ej. 3 · Generics</button>
+        <button class="sub-pill" onclick="switchSub(this)">Ej. 4 · Collections.sort</button>
+      </div>
+      <div class="sub-content active">
+        <div class="exercise-text">
+          <ol>
+            <li>Creá un <code>ArrayList&lt;String&gt;</code> con 5 frutas. Mostrá la lista, eliminá la segunda y mostrala de nuevo.</li>
+            <li>Recorrela con <code>for-each</code> e imprimí solo las frutas que tengan más de 5 letras.</li>
+            <li><strong>Desafío:</strong> creá un <code>ArrayList&lt;Persona&gt;</code> con 4 personas e imprimí sus nombres.</li>
+          </ol>
+        </div>
+        <div class="classroom-btns">
+          <a class="classroom-btn classroom-btn-lapaz"
+             href="https://www.onlinegdb.com/t/as/LINK_LA_PAZ"
+             target="_blank" rel="noopener">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            2do MB La Paz
+          </a>
+          <a class="classroom-btn classroom-btn-laspiedras"
+             href="https://www.onlinegdb.com/t/as/LINK_LAS_PIEDRAS"
+             target="_blank" rel="noopener">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            2do MB Las Piedras
+          </a>
+        </div>
+      </div>
+      <div class="sub-content">
+        <div class="exercise-text">
+          <ol>
+            <li>Creá un <code>HashMap&lt;String, Integer&gt;</code> con el nombre y la nota de 5 estudiantes.</li>
+            <li>Recorrelo e imprimí: "Nombre: X — Nota: Y". Luego mostrá solo los que aprobaron (nota ≥ 6).</li>
+            <li><strong>Desafío:</strong> calculá el promedio de notas e imprimí quién está por encima del promedio.</li>
+          </ol>
+        </div>
+        <div class="classroom-btns">
+          <a class="classroom-btn classroom-btn-lapaz"
+             href="https://www.onlinegdb.com/t/as/LINK_LA_PAZ"
+             target="_blank" rel="noopener">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            2do MB La Paz
+          </a>
+          <a class="classroom-btn classroom-btn-laspiedras"
+             href="https://www.onlinegdb.com/t/as/LINK_LAS_PIEDRAS"
+             target="_blank" rel="noopener">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            2do MB Las Piedras
+          </a>
+        </div>
+      </div>
+      <div class="sub-content">
+        <div class="exercise-text">
+          <ol>
+            <li>Creá un <code>ArrayList</code> sin generics, agregá un <code>String</code> y un <code>Integer</code>. Intentá hacer operaciones de String en ambos y observá el error en ejecución.</li>
+            <li>Repetí el ejercicio usando <code>ArrayList&lt;String&gt;</code> y observá cómo el compilador detecta el error antes de ejecutar.</li>
+            <li><strong>Desafío:</strong> creá un método genérico <code>&lt;T&gt; void imprimirLista(ArrayList&lt;T&gt; lista)</code> que funcione con cualquier tipo.</li>
+          </ol>
+        </div>
+        <div class="classroom-btns">
+          <a class="classroom-btn classroom-btn-lapaz"
+             href="https://www.onlinegdb.com/t/as/LINK_LA_PAZ"
+             target="_blank" rel="noopener">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            2do MB La Paz
+          </a>
+          <a class="classroom-btn classroom-btn-laspiedras"
+             href="https://www.onlinegdb.com/t/as/LINK_LAS_PIEDRAS"
+             target="_blank" rel="noopener">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            2do MB Las Piedras
+          </a>
+        </div>
+      </div>
+      <div class="sub-content">
+        <div class="exercise-text">
+          <ol>
+            <li>Creá un <code>ArrayList&lt;Integer&gt;</code> con 8 números desordenados. Ordenalos con <code>Collections.sort()</code> e imprimí el resultado.</li>
+            <li>Mostrá el máximo y el mínimo usando <code>Collections.max()</code> y <code>Collections.min()</code>.</li>
+            <li><strong>Desafío:</strong> implementá <code>Comparable&lt;Persona&gt;</code> en la clase <code>Persona</code> para ordenar por edad, y usá <code>Collections.sort()</code> con una lista de personas.</li>
+          </ol>
+        </div>
+        <div class="classroom-btns">
+          <a class="classroom-btn classroom-btn-lapaz"
+             href="https://www.onlinegdb.com/t/as/LINK_LA_PAZ"
+             target="_blank" rel="noopener">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            2do MB La Paz
+          </a>
+          <a class="classroom-btn classroom-btn-laspiedras"
+             href="https://www.onlinegdb.com/t/as/LINK_LAS_PIEDRAS"
+             target="_blank" rel="noopener">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            2do MB Las Piedras
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="tab-panel">
+      <p class="theory-text">Respondé el cuestionario para verificar tu comprensión de toda la unidad.</p>
+      <div class="forms-placeholder">
+        <svg width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+        <strong>Pegá aquí el embed de tu Google Form</strong>
+        <span>Formulario → Enviar → ícono cadena → copiá el link → agregá <code>?embedded=true</code></span>
+        <code>&lt;iframe src="https://docs.google.com/forms/d/e/TU_ID/viewform?embedded=true" width="100%" height="520" frameborder="0"&gt;&lt;/iframe&gt;</code>
+      </div>
+    </div>
+
+    <div class="tab-panel">
+      <div class="recursos-section">
+        <div>
+          <h3>📚 Documentación de colecciones</h3>
+          <div class="recursos-grid">
+            <a class="recurso-card" href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/ArrayList.html" target="_blank" rel="noopener">
+              <div class="recurso-icon">📘</div>
+              <div class="recurso-info">
+                <span class="recurso-name">Javadoc — ArrayList</span>
+                <span class="recurso-desc">Todos los métodos disponibles con su descripción oficial.</span>
+              </div>
+            </a>
+            <a class="recurso-card" href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/HashMap.html" target="_blank" rel="noopener">
+              <div class="recurso-icon">📘</div>
+              <div class="recurso-info">
+                <span class="recurso-name">Javadoc — HashMap</span>
+                <span class="recurso-desc">Referencia completa de HashMap con todos sus métodos.</span>
+              </div>
+            </a>
+            <a class="recurso-card" href="https://www.w3schools.com/java/java_arraylist.asp" target="_blank" rel="noopener">
+              <div class="recurso-icon">🌐</div>
+              <div class="recurso-info">
+                <span class="recurso-name">W3Schools — ArrayList</span>
+                <span class="recurso-desc">Referencia rápida con ejemplos ejecutables para cada método.</span>
+              </div>
+            </a>
+            <a class="recurso-card" href="https://www.w3schools.com/java/java_hashmap.asp" target="_blank" rel="noopener">
+              <div class="recurso-icon">🌐</div>
+              <div class="recurso-info">
+                <span class="recurso-name">W3Schools — HashMap</span>
+                <span class="recurso-desc">Referencia rápida con ejemplos ejecutables para cada método.</span>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>

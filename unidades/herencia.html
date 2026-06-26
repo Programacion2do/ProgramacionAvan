@@ -1,0 +1,466 @@
+<div class="card-header">
+      <div class="card-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+      </div>
+      <div class="card-meta">
+        <span class="card-unit">Unidad 2</span>
+        <h2 class="card-title">Herencia y Polimorfismo</h2>
+      </div>
+      <div class="card-complete-badge" aria-live="polite">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>
+        Completada
+      </div>
+    </div>
+
+    <div class="tabs" role="tablist" aria-label="Secciones de Herencia">
+      <button class="tab-btn active" role="tab" aria-selected="true" onclick="switchTab(this)">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+        Teoría
+      </button>
+      <button class="tab-btn" role="tab" aria-selected="false" onclick="switchTab(this)">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="4 17 10 11 4 5"/><line x1="12" y1="19" x2="20" y2="19"/></svg>
+        Ejercicios
+      </button>
+      <button class="tab-btn" role="tab" aria-selected="false" onclick="switchTab(this)">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+        Cuestionario
+      </button>
+      <button class="tab-btn" role="tab" aria-selected="false" onclick="switchTab(this)">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+        Recursos
+      </button>
+    </div>
+
+    <!-- TAB: Teoría -->
+    <div class="tab-panel active">
+      <div class="subtopic-bar" role="tablist" aria-label="Subtemas de teoría">
+        <button class="sub-pill active" onclick="switchSub(this)">2.1 extends</button>
+        <button class="sub-pill" onclick="switchSub(this)">2.2 super()</button>
+        <button class="sub-pill" onclick="switchSub(this)">2.3 @Override</button>
+        <button class="sub-pill" onclick="switchSub(this)">2.4 Herencia multinivel</button>
+        <button class="sub-pill" onclick="switchSub(this)">2.5 Sobrecarga</button>
+      </div>
+
+      <!-- 2.1 extends -->
+      <div class="sub-content active">
+        <p class="theory-text">
+          La <strong>herencia</strong> permite crear una clase hija (<em>subclase</em>) que reutiliza atributos y métodos de una clase padre (<em>superclase</em>). Se usa la palabra clave <code>extends</code>.<br><br>
+          La subclase hereda todo lo que <strong>no</strong> sea <code>private</code> del padre. Para que los atributos del padre sean accesibles directamente en la hija, se declaran <code>protected</code>.<br><br>
+          En Java solo se puede extender <strong>una</strong> clase (<em>herencia simple</em>). La relación que establece es <em>"es un"</em> (<strong>is-a</strong>): un <code>Becado</code> <em>es un</em> <code>Alumno</code>. Esto es diferente de la relación <em>"tiene un"</em> (<strong>has-a</strong>), que se modela con atributos, no con herencia — por ejemplo, un <code>Auto</code> <em>tiene un</em> <code>Motor</code>.<br><br>
+          Atención: dos clases que casualmente comparten los mismos campos <strong>no</strong> deben heredar entre sí si no existe esa relación conceptual real.
+        </p>
+        <img src="img/diagrama-alumno-becado.png"
+             alt="Diagrama de clases UML — Alumno y Becado"
+             class="theory-img">
+        <p class="panel-label">Ejemplo — ejecutá el código:</p>
+        <div class="compiler-frame"><iframe src="https://onecompiler.com/embed/java/44tcufzg4" title="Ejemplo extends Alumno/Becado" allowfullscreen loading="lazy"></iframe></div>
+        <p class="theory-note">💡 Código a cargar: <code>Alumno</code> con nombre, grado y cuota; <code>Becado extends Alumno</code> con saldoBeca; <code>Main</code> que crea un alumno y un becado e imprime sus datos.</p>
+        <div class="theory-refs">
+          <strong>Referencias</strong>
+          Herencia entre clases — material de clase, EMT La Paz (E. Izquierdo)<br>
+          Charly Cimino — <a href="recursos/Herencia-en-Java-Charly-Cimino.pdf" target="_blank">Herencia en Java</a> (CC BY-NC-ND 4.0)
+        </div>
+      </div>
+
+      <!-- 2.2 super() -->
+      <div class="sub-content">
+        <p class="theory-text">
+          Cuando la superclase tiene un constructor con parámetros, la subclase <strong>debe</strong> llamarlo explícitamente con <code>super()</code>. Esta llamada debe ser la <strong>primera línea</strong> del constructor hijo.<br><br>
+          Si no se llama a <code>super()</code>, Java intenta llamar al constructor sin parámetros del padre — si ese no existe, el compilador da error.
+        </p>
+        <div class="theory-code-block">
+<pre><code>public class Alumno {
+    private String nombre;
+    private int    grado;
+    private double cuota;
+
+    public Alumno(String nombre, int grado, double cuota) {
+        this.nombre = nombre;
+        this.grado  = grado;
+        this.cuota  = cuota;
+    }
+
+    public double cuotaNeta() { return cuota; }
+}
+
+public class Becado extends Alumno {
+    private double saldoBeca;
+
+    public Becado(double beca, String nombre, int grado, double cuota) {
+        super(nombre, grado, cuota);  // ← primera línea obligatoria
+        saldoBeca = beca;
+    }
+}</code></pre>
+        </div>
+        <p class="theory-text">
+          La palabra clave <code>super</code> tiene tres usos posibles:
+        </p>
+        <div class="theory-code-block">
+<pre><code>super(args)         // 1. Invocar el constructor del padre (primera línea)
+super.metodo(args)  // 2. Invocar un método del padre (ej: super.toString())
+super.atributo      // 3. Acceder a un atributo del padre (si es protected)</code></pre>
+        </div>
+        <p class="panel-label">Ejemplo — ejecutá el código:</p>
+        <div class="compiler-frame"><iframe src="https://onecompiler.com/embed/java/44tcvhyyk" title="Ejemplo super() constructor" allowfullscreen loading="lazy"></iframe></div>
+        <p class="theory-note">💡 Código a cargar: <code>Becado</code> llama a <code>super(nombre, grado, cuota)</code> para inicializar los campos heredados, luego asigna <code>saldoBeca</code>. Imprimí ambos objetos.</p>
+        <div class="theory-refs">
+          <strong>Referencias</strong>
+          Herencia entre clases — material de clase, EMT La Paz (E. Izquierdo)<br>
+          Presentación C06-01 — Herencia: Sobrecarga y Sobreescritura (clase)<br>
+          Ejemplo funcional: <a href="https://onlinegdb.com/Mr9GUGH1R" target="_blank" rel="noopener">onlinegdb.com/Mr9GUGH1R</a> (Empleado/Vendedor)
+        </div>
+      </div>
+
+      <!-- 2.3 @Override -->
+      <div class="sub-content">
+        <p class="theory-text">
+          La <strong>sobreescritura</strong> permite que una subclase redefina un método heredado con su propio comportamiento. <code>@Override</code> no es obligatoria pero es una buena práctica: si el nombre del método no coincide con ninguno del padre, el compilador avisa el error de inmediato.<br><br>
+          Para que haya sobreescritura, la <strong>firma del método</strong> debe ser idéntica a la del padre. La <em>firma</em> está formada por el <strong>nombre</strong> y la <strong>lista de parámetros</strong> (número, tipo y orden). <em>No</em> forman parte de la firma: el tipo de retorno, el modificador de acceso ni los nombres de los parámetros.<br><br>
+          Un caso muy común es sobreescribir <code>toString()</code> para que imprimir un objeto muestre información útil. También se pueden sobreescribir métodos de negocio como <code>cuotaNeta()</code>:
+        </p>
+        <div class="theory-code-block">
+<pre><code>public class Becado extends Alumno {
+    private double saldoBeca;
+    // ... constructor con super() ...
+
+    @Override
+    public String toString() {
+        return super.toString() + ", beca: " + saldoBeca;
+    }
+
+    @Override
+    public double cuotaNeta() {
+        return super.cuotaNeta() - saldoBeca;
+    }
+}</code></pre>
+        </div>
+        <p class="theory-text">
+          <code>super.toString()</code> reutiliza la implementación del padre y le agrega la info propia. Lo mismo con <code>super.cuotaNeta()</code>: el becado paga la cuota normal <em>menos</em> su beca.
+        </p>
+        <p class="panel-label">Ejemplo — ejecutá el código:</p>
+        <div class="compiler-frame"><iframe src="https://onecompiler.com/embed/java/44tcvqn6a" title="Ejemplo @Override" allowfullscreen loading="lazy"></iframe></div>
+        <p class="theory-note">💡 Código a cargar: <code>Becado</code> completo con <code>@Override toString()</code> y <code>@Override cuotaNeta()</code>. Creá un alumno y un becado e imprimí cuánto paga cada uno.</p>
+        <div class="theory-refs">
+          <strong>Referencias</strong>
+          Herencia entre clases — material de clase, EMT La Paz (E. Izquierdo)<br>
+          Presentación C06-01 — Herencia: Sobrecarga y Sobreescritura (concepto de firma del método)
+        </div>
+      </div>
+
+      <!-- 2.4 Herencia multinivel -->
+      <div class="sub-content">
+        <p class="theory-text">
+          La herencia puede encadenarse en varios niveles: <code>A → B → C</code>, donde <code>C</code> hereda de <code>B</code>, que hereda de <code>A</code>. Cada <code>super()</code> sube un nivel en la cadena.<br><br>
+          Ejemplo: <code>Electrodomestico → Lavadora</code>. La <code>Lavadora</code> hereda <code>marca</code> y <code>potencia</code> de <code>Electrodomestico</code>, agrega <code>capacidad</code>, y sobreescribe <code>getInfo()</code> usando <code>super.getInfo()</code>:
+        </p>
+        <div class="theory-code-block">
+<pre><code>public class Electrodomestico {
+    protected String marca;
+    protected int    potencia;
+    public Electrodomestico(String m, int p) { marca = m; potencia = p; }
+    public String getInfo() { return marca + " - " + potencia + "W"; }
+}
+
+public class Lavadora extends Electrodomestico {
+    private int capacidad;
+    public Lavadora(String m, int p, int c) {
+        super(m, p);            // inicializa Electrodomestico
+        this.capacidad = c;
+    }
+    @Override
+    public String getInfo() {
+        return super.getInfo() + ", Capacidad: " + capacidad + "kg";
+    }
+}</code></pre>
+        </div>
+        <p class="theory-text">
+          Regla clave: <code>super()</code> siempre va primero en el constructor. Java no permite herencia múltiple (extender dos clases a la vez); para eso existen las <em>interfaces</em>.
+        </p>
+        <p class="panel-label">Ejemplo — ejecutá el código:</p>
+        <div class="compiler-frame"><iframe src="https://onecompiler.com/embed/java/44td2dthb" title="Ejemplo herencia multinivel" allowfullscreen loading="lazy"></iframe></div>
+        <p class="theory-note">💡 Código a cargar: <code>Electrodomestico → Lavadora</code> con <code>getInfo()</code> sobreescrito. Creá una lavadora e imprimí su info completa.</p>
+        <div class="theory-refs">
+          <strong>Referencias</strong>
+          Java POO — <a href="coddy_java_poo.html" target="_blank">Coddy.tech (adaptación local)</a><br>
+          Charly Cimino — <a href="recursos/Herencia-en-Java-Charly-Cimino.pdf" target="_blank">Herencia en Java</a> (CC BY-NC-ND 4.0)
+        </div>
+      </div>
+
+      <!-- 2.5 Sobrecarga -->
+      <div class="sub-content">
+        <p class="theory-text">
+          La <strong>sobrecarga de métodos</strong> (<em>overloading</em>) consiste en definir varios métodos con el <strong>mismo nombre</strong> pero diferente <strong>firma</strong> dentro de la misma clase. Recordá: la firma = nombre + lista de parámetros (número, tipo, orden).<br><br>
+          Es diferente de la <em>sobreescritura</em>: la sobrecarga ocurre en <strong>la misma clase</strong>, entre métodos con diferente firma. La sobreescritura ocurre entre <strong>subclase y superclase</strong>, redefiniendo un método con la <strong>misma firma</strong>.
+        </p>
+        <div class="theory-code-block">
+<pre><code>public class Empleado {
+    private double salario;
+
+    // Sobrecarga: mismo nombre, distintos parámetros
+    public double calcularSalario() {
+        return salario;
+    }
+    public double calcularSalario(double bono) {
+        return salario + bono;
+    }
+    public double calcularSalario(double bono, double deduccion) {
+        return salario + bono - deduccion;
+    }
+}</code></pre>
+        </div>
+        <p class="theory-text">
+          En el <code>main</code>, Java elige automáticamente cuál versión llamar según los argumentos que pasás:
+        </p>
+        <div class="theory-code-block">
+<pre><code>Empleado e = new Empleado(2000);
+e.calcularSalario();              // retorna 2000
+e.calcularSalario(500);           // retorna 2500
+e.calcularSalario(500, 100);      // retorna 2400</code></pre>
+        </div>
+        <div class="theory-note" style="margin-top:.8rem;">
+          🔁 <strong>Resumen: Sobrecarga vs Sobreescritura</strong><br>
+          <strong>Sobrecarga:</strong> misma clase · mismo nombre · diferente firma · en tiempo de compilación<br>
+          <strong>Sobreescritura:</strong> subclase/superclase · misma firma · diferente comportamiento · en tiempo de ejecución
+        </div>
+        <p class="panel-label">Ejemplo — ejecutá el código:</p>
+        <div class="compiler-frame"><iframe src="https://onecompiler.com/embed/java/44td2nj2d" title="Ejemplo Sobrecarga de métodos" allowfullscreen loading="lazy"></iframe></div>
+        <p class="theory-note">💡 Código a cargar: clase <code>Empleado</code> con las tres versiones de <code>calcularSalario()</code>. En el <code>main</code>, probá las tres llamadas e imprimí los resultados.</p>
+        <div class="theory-refs">
+          <strong>Referencias</strong>
+          Presentación C06-01 — Herencia: Sobrecarga y Sobreescritura (clase)<br>
+          Ejemplo funcional Empleado/Vendedor: <a href="https://onlinegdb.com/Mr9GUGH1R" target="_blank" rel="noopener">onlinegdb.com/Mr9GUGH1R</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- TAB: Ejercicios -->
+    <div class="tab-panel">
+      <div class="subtopic-bar" role="tablist" aria-label="Ejercicios">
+        <button class="sub-pill active" onclick="switchSub(this)">Ej. 1 · Alumno/Becado</button>
+        <button class="sub-pill" onclick="switchSub(this)">Ej. 2 · Vehículo/Moto</button>
+        <button class="sub-pill" onclick="switchSub(this)">Ej. 3 · @Override toString</button>
+        <button class="sub-pill" onclick="switchSub(this)">Ej. 4 · Herencia 3 niveles</button>
+      </div>
+
+      <!-- Ejercicio 1 -->
+      <div class="sub-content active">
+        <div class="classroom-section">
+          <p class="classroom-label">Ejercicio obligatorio — accedé con tu usuario de OnlineGDB</p>
+          <div class="classroom-btns">
+            <a class="classroom-btn classroom-btn-classroom"
+               href="https://www.onlinegdb.com/classroom"
+               target="_blank" rel="noopener">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+              Acceso a OnlineGDB Classroom
+            </a>
+          </div>
+        </div>
+        <div class="challenge-section">
+          <p class="panel-label">🎯 Desafío abierto</p>
+          <div class="exercise-text">
+            <ol>
+              <li>Creá la clase <code>Alumno</code> con atributos <code>nombre</code>, <code>grado</code> y <code>cuota</code>. Agregá un método <code>cuotaNeta()</code> que retorne la cuota.</li>
+              <li>Creá <code>Becado extends Alumno</code> con el atributo <code>saldoBeca</code>. Usá <code>super()</code> en su constructor para inicializar los campos heredados.</li>
+              <li><strong>Desafío:</strong> sobreescribí <code>cuotaNeta()</code> en <code>Becado</code> para que retorne <code>cuota - saldoBeca</code>. ¿Qué pasa si la beca es mayor que la cuota?</li>
+            </ol>
+          </div>
+          <div class="compiler-frame">
+            <iframe src="https://onecompiler.com/embed/java" title="Desafío — Alumno/Becado" allowfullscreen loading="lazy"></iframe>
+          </div>
+        </div>
+      </div>
+
+      <!-- Ejercicio 2 -->
+      <div class="sub-content">
+        <div class="classroom-section">
+          <p class="classroom-label">Ejercicio obligatorio — accedé con tu usuario de OnlineGDB</p>
+          <div class="classroom-btns">
+            <a class="classroom-btn classroom-btn-classroom"
+               href="https://www.onlinegdb.com/classroom"
+               target="_blank" rel="noopener">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+              Acceso a OnlineGDB Classroom
+            </a>
+          </div>
+        </div>
+        <div class="challenge-section">
+          <p class="panel-label">🎯 Desafío abierto</p>
+          <div class="exercise-text">
+            <ol>
+              <li>Creá la clase <code>Vehiculo</code> con <code>protected String marca</code> y un método <code>arrancar()</code> que imprima <code>"[marca] está arrancando"</code>.</li>
+              <li>Creá <code>Moto extends Vehiculo</code> con un método <code>cabriola()</code>. Usá <code>super(marca)</code> en el constructor.</li>
+              <li><strong>Desafío:</strong> agregá también <code>Auto extends Vehiculo</code> con <code>cantPuertas</code>. Creá un array <code>Vehiculo[]</code> con motos y autos mezclados y llamá <code>arrancar()</code> en cada uno.</li>
+            </ol>
+          </div>
+          <div class="compiler-frame">
+            <iframe src="https://onecompiler.com/embed/java" title="Desafío — Vehiculo/Moto" allowfullscreen loading="lazy"></iframe>
+          </div>
+        </div>
+      </div>
+
+      <!-- Ejercicio 3 -->
+      <div class="sub-content">
+        <div class="classroom-section">
+          <p class="classroom-label">Ejercicio obligatorio — accedé con tu usuario de OnlineGDB</p>
+          <div class="classroom-btns">
+            <a class="classroom-btn classroom-btn-classroom"
+               href="https://www.onlinegdb.com/classroom"
+               target="_blank" rel="noopener">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+              Acceso a OnlineGDB Classroom
+            </a>
+          </div>
+        </div>
+        <div class="challenge-section">
+          <p class="panel-label">🎯 Desafío abierto</p>
+          <div class="exercise-text">
+            <ol>
+              <li>Tomá la clase <code>Vehiculo</code> del ejercicio anterior y agregale <code>@Override toString()</code> que retorne <code>"Vehículo: [marca]"</code>.</li>
+              <li>En <code>Auto</code>, sobreescribí <code>toString()</code> con <code>@Override</code> para retornar <code>super.toString() + ", puertas: [cantPuertas]"</code>.</li>
+              <li><strong>Desafío:</strong> creá <code>Notificacion</code> con método <code>enviar()</code> que imprime un mensaje. Hacé que <code>NotificacionEmail</code> sobreescriba <code>enviar()</code> llamando a <code>super.enviar()</code> y agregando el envío por mail.</li>
+            </ol>
+          </div>
+          <div class="compiler-frame">
+            <iframe src="https://onecompiler.com/embed/java" title="Desafío — @Override toString" allowfullscreen loading="lazy"></iframe>
+          </div>
+        </div>
+      </div>
+
+      <!-- Ejercicio 4 -->
+      <div class="sub-content">
+        <div class="classroom-section">
+          <p class="classroom-label">Ejercicio obligatorio — accedé con tu usuario de OnlineGDB</p>
+          <div class="classroom-btns">
+            <a class="classroom-btn classroom-btn-classroom"
+               href="https://www.onlinegdb.com/classroom"
+               target="_blank" rel="noopener">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+              Acceso a OnlineGDB Classroom
+            </a>
+          </div>
+        </div>
+        <div class="challenge-section">
+          <p class="panel-label">🎯 Desafío abierto</p>
+          <div class="exercise-text">
+            <ol>
+              <li>Construí la cadena <code>Electrodomestico → Lavadora</code>: <code>Electrodomestico</code> tiene <code>marca</code> y <code>potencia</code>; <code>Lavadora</code> agrega <code>capacidad</code> y sobreescribe <code>getInfo()</code>.</li>
+              <li>Extendé un nivel más: <code>LavadoraIndustrial extends Lavadora</code> con atributo <code>turnosDiarios</code>. Sobreescribí <code>getInfo()</code> añadiendo esa info.</li>
+              <li><strong>Desafío:</strong> en el <code>main</code>, creá un objeto de cada tipo e imprimí su <code>getInfo()</code>. Observá cómo cada nivel de herencia agrega información.</li>
+            </ol>
+          </div>
+          <div class="compiler-frame">
+            <iframe src="https://onecompiler.com/embed/java" title="Desafío — Herencia 3 niveles" allowfullscreen loading="lazy"></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TAB: Cuestionario -->
+    <div class="tab-panel">
+      <p class="theory-text">Respondé el cuestionario para verificar tu comprensión de toda la unidad.</p>
+      <div class="forms-placeholder">
+        <svg width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+        <strong>Pegá aquí el embed de tu Google Form</strong>
+        <span>Formulario → Enviar → ícono cadena → copiá el link → agregá <code>?embedded=true</code></span>
+        <code>&lt;iframe src="https://docs.google.com/forms/d/e/TU_ID/viewform?embedded=true" width="100%" height="520" frameborder="0"&gt;&lt;/iframe&gt;</code>
+      </div>
+    </div>
+
+    <!-- TAB: Recursos -->
+    <div class="tab-panel">
+      <div class="recursos-section">
+        <div>
+          <h3>📄 Hoja de referencia — Herencia</h3>
+          <p class="theory-text" style="padding: 0 1.75rem; margin-bottom: 1rem;">Resumen visual de la sintaxis de herencia: <code>extends</code>, <code>super()</code> y <code>@Override</code>.</p>
+          <div style="padding: 0 1.75rem 0;">
+            <iframe
+              src="recursos/Hoja-de-referencia-HERENCIA.pdf"
+              title="Hoja de referencia Herencia"
+              width="100%"
+              height="620"
+              style="border: 1px solid var(--gray-100); border-radius: 8px; display:block;">
+            </iframe>
+          </div>
+          <div style="padding: .75rem 1.75rem 1.25rem;">
+            <a class="classroom-btn classroom-btn-classroom"
+               href="recursos/Hoja-de-referencia-HERENCIA.pdf"
+               download
+               style="display:inline-flex; align-items:center; gap:.5rem; text-decoration:none; margin-top:.5rem;">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+              Descargar PDF
+            </a>
+          </div>
+        </div>
+        <div>
+          <h3>📐 Diagramas UML para herencia</h3>
+          <div class="recursos-grid">
+            <a class="recurso-card" href="https://lucid.app/" target="_blank" rel="noopener">
+              <div class="recurso-icon">🔷</div>
+              <div class="recurso-info">
+                <span class="recurso-name">Lucidchart</span>
+                <span class="recurso-desc">Diagramas de jerarquía de clases online y colaborativos. Tiene plantillas de herencia UML.</span>
+              </div>
+            </a>
+            <a class="recurso-card" href="https://app.diagrams.net/" target="_blank" rel="noopener">
+              <div class="recurso-icon">🟦</div>
+              <div class="recurso-info">
+                <span class="recurso-name">Draw.io</span>
+                <span class="recurso-desc">Usá las formas de diagrama de clase UML para representar jerarquías de herencia.</span>
+              </div>
+            </a>
+            <a class="recurso-card" href="https://plantuml.com/es/class-diagram" target="_blank" rel="noopener">
+              <div class="recurso-icon">🌱</div>
+              <div class="recurso-info">
+                <span class="recurso-name">PlantUML — Diagramas de clase</span>
+                <span class="recurso-desc">Generá diagramas de herencia desde código de texto. Muy útil para documentar.</span>
+              </div>
+            </a>
+          </div>
+        </div>
+        <div>
+          <h3>📖 Material de clase</h3>
+          <div class="recursos-grid">
+            <a class="recurso-card" href="recursos/Herencia-en-Java-Charly-Cimino.pdf" target="_blank" rel="noopener">
+              <div class="recurso-icon">📄</div>
+              <div class="recurso-info">
+                <span class="recurso-name">Herencia en Java — Charly Cimino</span>
+                <span class="recurso-desc">PDF teórico completo: is-a vs has-a, modificadores de acceso, upcasting, instanceof y clases abstractas. Licencia CC BY-NC-ND 4.0.</span>
+              </div>
+            </a>
+            <a class="recurso-card" href="https://onlinegdb.com/Mr9GUGH1R" target="_blank" rel="noopener">
+              <div class="recurso-icon">💻</div>
+              <div class="recurso-info">
+                <span class="recurso-name">Ejemplo Empleado/Vendedor — OnlineGDB</span>
+                <span class="recurso-desc">Código funcional de herencia con <code>super()</code> y <code>@Override</code>. Fuente: presentación C06-01 de clase.</span>
+              </div>
+            </a>
+          </div>
+        </div>
+        <div>
+          <h3>📚 Recursos específicos del tema</h3>
+          <div class="recursos-grid">
+            <a class="recurso-card" href="https://www.w3schools.com/java/java_inheritance.asp" target="_blank" rel="noopener">
+              <div class="recurso-icon">🌐</div>
+              <div class="recurso-info">
+                <span class="recurso-name">W3Schools — Herencia Java</span>
+                <span class="recurso-desc">Explicación clara con ejemplos interactivos para extends, super y polimorfismo.</span>
+              </div>
+            </a>
+            <a class="recurso-card" href="https://docs.oracle.com/javase/tutorial/java/IandI/index.html" target="_blank" rel="noopener">
+              <div class="recurso-icon">📘</div>
+              <div class="recurso-info">
+                <span class="recurso-name">Oracle Tutorial — Interfaces &amp; Herencia</span>
+                <span class="recurso-desc">Tutorial oficial. Cubre herencia, clases abstractas e interfaces en profundidad.</span>
+              </div>
+            </a>
+            <a class="recurso-card" href="https://www.youtube.com/playlist?list=PLWtYZ2ejMVJlUu1rEHLC0i_oibctkl0Vh" target="_blank" rel="noopener">
+              <div class="recurso-icon">🔴</div>
+              <div class="recurso-info">
+                <span class="recurso-name">Píldoras Informáticas — Herencia</span>
+                <span class="recurso-desc">Videos en español con ejemplos paso a paso de herencia y polimorfismo en Java.</span>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>

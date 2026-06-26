@@ -1,0 +1,246 @@
+<div class="card-header">
+      <div class="card-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 9h6M9 12h6M9 15h4"/></svg>
+      </div>
+      <div class="card-meta">
+        <span class="card-unit">Unidad 1</span>
+        <h2 class="card-title">Clases y Objetos</h2>
+      </div>
+      <div class="card-complete-badge" aria-live="polite">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>
+        Completada
+      </div>
+    </div>
+
+    <div class="tabs" role="tablist" aria-label="Secciones de Clases y Objetos">
+      <button class="tab-btn active" role="tab" aria-selected="true" onclick="switchTab(this)">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+        Teoría
+      </button>
+      <button class="tab-btn" role="tab" aria-selected="false" onclick="switchTab(this)">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="4 17 10 11 4 5"/><line x1="12" y1="19" x2="20" y2="19"/></svg>
+        Ejercicios
+      </button>
+      <button class="tab-btn" role="tab" aria-selected="false" onclick="switchTab(this)">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+        Cuestionario
+      </button>
+      <button class="tab-btn" role="tab" aria-selected="false" onclick="switchTab(this)">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+        Recursos
+      </button>
+    </div>
+
+    <!-- TAB: Teoría -->
+    <div class="tab-panel active">
+      <div class="subtopic-bar" role="tablist" aria-label="Subtemas de teoría">
+        <button class="sub-pill active" onclick="switchSub(this)">1.1 ¿Qué es una clase?</button>
+        <button class="sub-pill" onclick="switchSub(this)">1.2 Atributos y métodos</button>
+        <button class="sub-pill" onclick="switchSub(this)">1.3 Constructores</button>
+        <button class="sub-pill" onclick="switchSub(this)">1.4 Encapsulamiento</button>
+      </div>
+      <div class="sub-content active">
+        <p class="theory-text">Una <strong>clase</strong> es una plantilla o molde que describe las características y comportamientos de un tipo de objeto. En Java se define con la palabra clave <code>class</code>. A partir de una clase se pueden crear múltiples <strong>objetos</strong>, cada uno con su propio estado.<br><br>Ejemplo: la clase <code>Perro</code> describe qué es un perro; cada perro individual (Fido, Rex) es un objeto de esa clase.</p>
+        <p class="panel-label">Ejemplo — ejecutá el código:</p>
+        <div class="compiler-frame"><iframe src="https://onecompiler.com/embed/java" title="Ejemplo clases" allowfullscreen loading="lazy"></iframe></div>
+      </div>
+      <div class="sub-content">
+        <p class="theory-text">Los <strong>atributos</strong> (o campos) representan el estado de un objeto: datos que almacena. Los <strong>métodos</strong> representan su comportamiento: acciones que puede realizar.<br><br>Se declaran dentro de la clase. Los atributos suelen ser <code>private</code> y los métodos <code>public</code>. Un método <code>void</code> no retorna valor; si retorna algo, se indica el tipo (<code>int</code>, <code>String</code>, etc.).</p>
+        <p class="panel-label">Ejemplo — ejecutá el código:</p>
+        <div class="compiler-frame"><iframe src="https://onecompiler.com/embed/java" title="Ejemplo atributos" allowfullscreen loading="lazy"></iframe></div>
+      </div>
+      <div class="sub-content">
+        <p class="theory-text">El <strong>constructor</strong> es un método especial que se ejecuta automáticamente al crear un objeto con <code>new</code>. Tiene el mismo nombre que la clase y no tiene tipo de retorno. Sirve para inicializar los atributos.<br><br>Si no definís un constructor, Java crea uno vacío por defecto. Podés tener varios constructores con distintos parámetros (<strong>sobrecarga</strong>).</p>
+        <p class="panel-label">Ejemplo — ejecutá el código:</p>
+        <div class="compiler-frame"><iframe src="https://onecompiler.com/embed/java" title="Ejemplo constructores" allowfullscreen loading="lazy"></iframe></div>
+      </div>
+      <div class="sub-content">
+        <p class="theory-text">El <strong>encapsulamiento</strong> es el principio de ocultar los datos internos de una clase y exponer solo lo necesario. Se logra declarando atributos como <code>private</code> y accediendo a ellos mediante métodos <code>get</code> y <code>set</code> (getters y setters).<br><br>Esto protege la integridad del objeto: nadie puede modificar un atributo directamente sin pasar por las validaciones del setter.</p>
+        <p class="panel-label">Ejemplo — ejecutá el código:</p>
+        <div class="compiler-frame"><iframe src="https://onecompiler.com/embed/java" title="Ejemplo encapsulamiento" allowfullscreen loading="lazy"></iframe></div>
+      </div>
+    </div>
+
+    <!-- TAB: Ejercicios -->
+    <div class="tab-panel">
+      <div class="subtopic-bar" role="tablist" aria-label="Ejercicios">
+        <button class="sub-pill active" onclick="switchSub(this)">Ej. 1 · Clase Auto</button>
+        <button class="sub-pill" onclick="switchSub(this)">Ej. 2 · Rectángulo</button>
+        <button class="sub-pill" onclick="switchSub(this)">Ej. 3 · Constructores</button>
+        <button class="sub-pill" onclick="switchSub(this)">Ej. 4 · Encapsulamiento</button>
+      </div>
+
+      <!-- Ejercicio 1 -->
+      <div class="sub-content active">
+        <div class="classroom-section">
+          <p class="classroom-label">Ejercicio obligatorio — accedé con tu usuario de OnlineGDB</p>
+          <div class="classroom-btns">
+            <a class="classroom-btn classroom-btn-classroom"
+               href="https://www.onlinegdb.com/classroom"
+               target="_blank" rel="noopener">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+              Acceso a OnlineGDB Classroom
+            </a>
+          </div>
+        </div>
+        <div class="challenge-section">
+          <p class="panel-label">🎯 Desafío abierto</p>
+          <div class="exercise-text">
+            <ol>
+              <li>Definí una clase <code>Auto</code> con los atributos <code>marca</code>, <code>modelo</code> y <code>año</code>.</li>
+              <li>Creá 3 objetos <code>Auto</code> distintos e imprimí sus datos con <code>System.out.println()</code>.</li>
+              <li>Agregá un método <code>descripcion()</code> que retorne un <code>String</code> con toda la info del auto.</li>
+            </ol>
+          </div>
+          <div class="compiler-frame">
+            <iframe src="https://onecompiler.com/embed/java" title="Desafío — Clase Auto" allowfullscreen loading="lazy"></iframe>
+          </div>
+        </div>
+      </div>
+
+      <!-- Ejercicio 2 -->
+      <div class="sub-content">
+        <div class="classroom-section">
+          <p class="classroom-label">Ejercicio obligatorio — accedé con tu usuario de OnlineGDB</p>
+          <div class="classroom-btns">
+            <a class="classroom-btn classroom-btn-classroom"
+               href="https://www.onlinegdb.com/classroom"
+               target="_blank" rel="noopener">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+              Acceso a OnlineGDB Classroom
+            </a>
+          </div>
+        </div>
+        <div class="challenge-section">
+          <p class="panel-label">🎯 Desafío abierto</p>
+          <div class="exercise-text">
+            <ol>
+              <li>Creá una clase <code>Rectangulo</code> con atributos <code>base</code> y <code>altura</code>.</li>
+              <li>Agregá métodos <code>area()</code> y <code>perimetro()</code> que retornen el cálculo correspondiente.</li>
+              <li>Agregá un método <code>esCuadrado()</code> que retorne <code>boolean</code>.</li>
+            </ol>
+          </div>
+          <div class="compiler-frame">
+            <iframe src="https://onecompiler.com/embed/java" title="Desafío — Rectángulo" allowfullscreen loading="lazy"></iframe>
+          </div>
+        </div>
+      </div>
+
+      <!-- Ejercicio 3 -->
+      <div class="sub-content">
+        <div class="classroom-section">
+          <p class="classroom-label">Ejercicio obligatorio — accedé con tu usuario de OnlineGDB</p>
+          <div class="classroom-btns">
+            <a class="classroom-btn classroom-btn-classroom"
+               href="https://www.onlinegdb.com/classroom"
+               target="_blank" rel="noopener">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+              Acceso a OnlineGDB Classroom
+            </a>
+          </div>
+        </div>
+        <div class="challenge-section">
+          <p class="panel-label">🎯 Desafío abierto</p>
+          <div class="exercise-text">
+            <ol>
+              <li>Creá una clase <code>Persona</code> con constructor que reciba <code>nombre</code> y <code>edad</code>.</li>
+              <li>Sobrecargá el constructor: uno que reciba solo el nombre (edad = 0) y otro completo.</li>
+              <li>Agregá un tercer constructor que reciba nombre, edad y <code>dni</code>.</li>
+            </ol>
+          </div>
+          <div class="compiler-frame">
+            <iframe src="https://onecompiler.com/embed/java" title="Desafío — Constructores" allowfullscreen loading="lazy"></iframe>
+          </div>
+        </div>
+      </div>
+
+      <!-- Ejercicio 4 -->
+      <div class="sub-content">
+        <div class="classroom-section">
+          <p class="classroom-label">Ejercicio obligatorio — accedé con tu usuario de OnlineGDB</p>
+          <div class="classroom-btns">
+            <a class="classroom-btn classroom-btn-classroom"
+               href="https://www.onlinegdb.com/classroom"
+               target="_blank" rel="noopener">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+              Acceso a OnlineGDB Classroom
+            </a>
+          </div>
+        </div>
+        <div class="challenge-section">
+          <p class="panel-label">🎯 Desafío abierto</p>
+          <div class="exercise-text">
+            <ol>
+              <li>Tomá la clase <code>Persona</code> del ejercicio anterior y hacé todos sus atributos <code>private</code>.</li>
+              <li>Creá getters y setters para cada atributo.</li>
+              <li>En el setter de <code>edad</code> validá que el valor sea mayor que 0; si no, no actualices el atributo.</li>
+            </ol>
+          </div>
+          <div class="compiler-frame">
+            <iframe src="https://onecompiler.com/embed/java" title="Desafío — Encapsulamiento" allowfullscreen loading="lazy"></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TAB: Cuestionario -->
+    <div class="tab-panel">
+      <p class="theory-text">Respondé el cuestionario para verificar tu comprensión de toda la unidad.</p>
+      <div class="forms-placeholder">
+        <svg width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+        <strong>Pegá aquí el embed de tu Google Form</strong>
+        <span>Formulario → Enviar → ícono cadena → copiá el link → agregá <code>?embedded=true</code></span>
+        <code>&lt;iframe src="https://docs.google.com/forms/d/e/TU_ID/viewform?embedded=true" width="100%" height="520" frameborder="0"&gt;&lt;/iframe&gt;</code>
+      </div>
+    </div>
+
+    <!-- TAB: Recursos -->
+    <div class="tab-panel">
+      <div class="recursos-section">
+        <div>
+          <h3>📐 Diagramas de clase UML</h3>
+          <div class="recursos-grid">
+            <a class="recurso-card" href="https://lucid.app/" target="_blank" rel="noopener">
+              <div class="recurso-icon">🔷</div>
+              <div class="recurso-info">
+                <span class="recurso-name">Lucidchart</span>
+                <span class="recurso-desc">Diagramas de clase UML online y colaborativos. Tiene plantillas específicas para POO.</span>
+              </div>
+            </a>
+            <a class="recurso-card" href="https://app.diagrams.net/" target="_blank" rel="noopener">
+              <div class="recurso-icon">🟦</div>
+              <div class="recurso-info">
+                <span class="recurso-name">Draw.io (diagrams.net)</span>
+                <span class="recurso-desc">Online, gratis, sin instalación. Diagramas de clase UML con formas predefinidas.</span>
+              </div>
+            </a>
+            <a class="recurso-card" href="https://plantuml.com/es/class-diagram" target="_blank" rel="noopener">
+              <div class="recurso-icon">🌱</div>
+              <div class="recurso-info">
+                <span class="recurso-name">PlantUML — Diagramas de clase</span>
+                <span class="recurso-desc">Generá diagramas UML desde texto plano. Muy rápido para documentar clases.</span>
+              </div>
+            </a>
+          </div>
+        </div>
+        <div>
+          <h3>📚 Referencia del tema</h3>
+          <div class="recursos-grid">
+            <a class="recurso-card" href="https://www.w3schools.com/java/java_oop.asp" target="_blank" rel="noopener">
+              <div class="recurso-icon">🌐</div>
+              <div class="recurso-info">
+                <span class="recurso-name">W3Schools — Clases y objetos Java</span>
+                <span class="recurso-desc">Referencia rápida: sintaxis de clases, constructores, métodos y atributos.</span>
+              </div>
+            </a>
+            <a class="recurso-card" href="https://www.youtube.com/playlist?list=PLWtYZ2ejMVJlUu1rEHLC0i_oibctkl0Vh" target="_blank" rel="noopener">
+              <div class="recurso-icon">🔴</div>
+              <div class="recurso-info">
+                <span class="recurso-name">Java POO — Píldoras Informáticas</span>
+                <span class="recurso-desc">Playlist en español. Los primeros videos cubren clases, objetos, constructores y métodos.</span>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>

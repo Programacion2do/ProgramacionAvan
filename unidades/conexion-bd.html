@@ -1,0 +1,86 @@
+<div class="card-header">
+      <div class="card-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg>
+      </div>
+      <div class="card-meta">
+        <span class="card-unit">Unidad 4</span>
+        <h2 class="card-title">Conexión a Base de Datos</h2>
+      </div>
+      <div class="card-complete-badge" aria-live="polite">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>
+        Completada
+      </div>
+    </div>
+
+    <div class="tabs" role="tablist" aria-label="Secciones de JDBC">
+      <button class="tab-btn active" role="tab" aria-selected="true" onclick="switchTab(this)">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+        Teoría
+      </button>
+      <button class="tab-btn" role="tab" aria-selected="false" onclick="switchTab(this)">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="4 17 10 11 4 5"/><line x1="12" y1="19" x2="20" y2="19"/></svg>
+        Ejercicios
+      </button>
+      <button class="tab-btn" role="tab" aria-selected="false" onclick="switchTab(this)">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+        Cuestionario
+      </button>
+      <button class="tab-btn" role="tab" aria-selected="false" onclick="switchTab(this)">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+        Recursos
+      </button>
+    </div>
+
+    <div class="tab-panel active">
+      <div class="subtopic-bar" role="tablist" aria-label="Subtemas de teoría">
+        <button class="sub-pill active" onclick="switchSub(this)">4.1 Conexión JDBC</button>
+        <button class="sub-pill" onclick="switchSub(this)">4.2 Statement</button>
+        <button class="sub-pill" onclick="switchSub(this)">4.3 PreparedStatement</button>
+        <button class="sub-pill" onclick="switchSub(this)">4.4 Patrón DAO</button>
+      </div>
+      <div class="sub-content active">
+        <p class="theory-text"><strong>JDBC</strong> (Java Database Connectivity) es la API estándar de Java para conectarse a bases de datos relacionales. La conexión se establece con <code>DriverManager.getConnection(url, user, password)</code>, donde la URL tiene el formato <code>jdbc:mysql://host:puerto/baseDeDatos</code>.<br><br>Es fundamental cerrar la conexión al terminar para liberar recursos. Se recomienda usar <code>try-with-resources</code> para garantizarlo automáticamente.</p>
+        <p class="panel-label">Ejemplo — ejecutá el código:</p>
+        <div class="compiler-frame"><iframe src="https://onecompiler.com/embed/java" title="Ejemplo conexión JDBC" allowfullscreen loading="lazy"></iframe></div>
+      </div>
+      <div class="sub-content">
+        <p class="theory-text"><code>Statement</code> permite ejecutar consultas SQL estáticas (sin parámetros variables). Se crea con <code>con.createStatement()</code>.<br><br>Para consultas que devuelven filas se usa <code>executeQuery(sql)</code> que retorna un <code>ResultSet</code>. Para INSERT, UPDATE o DELETE se usa <code>executeUpdate(sql)</code>. No es seguro contra <strong>inyección SQL</strong>: nunca uses Statement con datos que ingresa el usuario.</p>
+        <p class="panel-label">Ejemplo — ejecutá el código:</p>
+        <div class="compiler-frame"><iframe src="https://onecompiler.com/embed/java" title="Ejemplo Statement" allowfullscreen loading="lazy"></iframe></div>
+      </div>
+      <div class="sub-content">
+        <p class="theory-text"><code>PreparedStatement</code> es la alternativa segura al <code>Statement</code>. La consulta se precompila con <code>?</code> como marcadores y los valores se asignan después con <code>setString()</code>, <code>setInt()</code>, etc.<br><br>Ventajas: previene inyecciones SQL, mejora el rendimiento en consultas repetidas y hace el código más legible. Es la forma recomendada para cualquier consulta con parámetros.</p>
+        <p class="panel-label">Ejemplo — ejecutá el código:</p>
+        <div class="compiler-frame"><iframe src="https://onecompiler.com/embed/java" title="Ejemplo PreparedStatement" allowfullscreen loading="lazy"></iframe></div>
+      </div>
+      <div class="sub-content">
+        <p class="theory-text">El patrón <strong>DAO</strong> (Data Access Object) separa la lógica de acceso a datos del resto de la aplicación. Se crea una clase (ej: <code>PersonaDAO</code>) que encapsula todas las operaciones CRUD de una tabla: <code>insertar()</code>, <code>buscarPorId()</code>, <code>listarTodos()</code>, <code>actualizar()</code>, <code>eliminar()</code>.<br><br>El resto del programa solo llama a esos métodos sin saber cómo están implementados, facilitando mantenimiento y cambios de base de datos.</p>
+        <p class="panel-label">Ejemplo — ejecutá el código:</p>
+        <div class="compiler-frame"><iframe src="https://onecompiler.com/embed/java" title="Ejemplo DAO" allowfullscreen loading="lazy"></iframe></div>
+      </div>
+    </div>
+
+    <div class="tab-panel">
+      <div class="subtopic-bar" role="tablist" aria-label="Ejercicios">
+        <button class="sub-pill active" onclick="switchSub(this)">Ej. 1 · Conexión</button>
+        <button class="sub-pill" onclick="switchSub(this)">Ej. 2 · Statement</button>
+        <button class="sub-pill" onclick="switchSub(this)">Ej. 3 · PreparedStatement</button>
+        <button class="sub-pill" onclick="switchSub(this)">Ej. 4 · DAO completo</button>
+      </div>
+      <div class="sub-content active">
+        <div class="exercise-text">
+          <ol>
+            <li>Escribí un programa que intente conectarse a una base de datos MySQL local. Usá <code>try-catch</code> para capturar la <code>SQLException</code> e imprimí un mensaje de error descriptivo si falla.</li>
+            <li>Usá <code>try-with-resources</code> para garantizar que la conexión se cierre automáticamente.</li>
+            <li><strong>Desafío:</strong> imprimí el nombre del driver y la URL de conexión usando los métodos de <code>Connection</code>.</li>
+          </ol>
+        </div>
+        <div class="classroom-btns">
+          <a class="classroom-btn classroom-btn-lapaz"
+             href="https://www.onlinegdb.com/t/as/LINK_LA_PAZ"
+             target="_blank" rel="noopener">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            2do MB La Paz
+          </a>
+          <a class="classroom-btn classroom-btn-laspiedras"
+             href="https://www.onlinegdb.com/t
