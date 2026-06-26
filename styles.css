@@ -381,7 +381,11 @@ main {
   flex-shrink: 0;
 }
 .sub-pill:hover { border-color: var(--c-cyan); color: var(--c-cyan); background: var(--c-cyan-light); }
-.sub-pill.active { background: var(--c-cyan); color: #fff; border-color: var(--c-cyan); }
+ .sub-pill.active {
+  background: #1e293b;   /* gris pizarra oscuro */
+  color: #fff;
+  border-color: #1e293b;
+}
 
 .sub-content { display: none; flex-direction: column; }
 .sub-content.active { display: flex; }
